@@ -1,0 +1,24 @@
+{
+    "avistamientos": [
+        {
+           "fecha": "2021-03-29 13:21",
+           "comuna": "La Florida",
+           "sector": "Vicuña Mackena",
+           "tipo": "insecto",
+           "img": {
+               "src":"/",
+               "alt":"chinita"
+           }
+        },
+        {
+            "fecha": "2021-03-27 10:03",
+            "comuna": "Providencia",
+            "sector": "Plaza Italia",
+            "tipo": "arácnido",
+            "img": {
+                "src":"/",
+                "alt":"tarantula"
+            }
+         }
+    ]
+}
