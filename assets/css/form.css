@@ -1,0 +1,43 @@
+/* **** FORM **** */
+
+.card form {
+    margin: auto;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+.card .form-section {
+    margin: 5px 10vw;
+    padding: 10px 0px;
+}
+
+.form-section p {
+    margin: 5px 0px;
+
+}
+
+.form-section input[type=text],
+.form-section input[type=email], 
+.form-section select {
+    width: 100%;
+    padding: 12px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    resize: vertical;
+}
+
+.form-section label {
+    padding: auto;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .card form {
+        width: 100%;
+    }
+    .card .form-section {
+        margin: 5px 2vw;
+    } 
+    
+}

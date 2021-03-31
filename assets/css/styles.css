@@ -5,6 +5,25 @@
 body {
     background: rgb(0,36,1);
     background: linear-gradient(90deg, rgba(0,36,1,1) 0%, rgba(44,82,47,1) 0%, rgba(36,194,64,1) 50%); 
+    padding: 0vh 15vw;
+}
+
+@media screen and (max-width: 1400px) {
+    body {
+        padding: 0vh 10vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        padding: 0vh 5vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        padding: 0vh 2vw;
+    }
 }
 
 /* **** NAV **** */
@@ -12,7 +31,7 @@ body {
 nav {
     background-color: white;
     border-radius: 10px;
-    margin: 20px 5vw;
+    margin: 20px 0px;
     padding: 15px;
 }
 
@@ -49,7 +68,7 @@ nav li a.redirect:hover {
 
 @media (max-width: 767px) {
     nav {
-        margin: 20px 2vw;
+        margin: 20px 0px;
     }
 
     nav li {
@@ -68,7 +87,7 @@ nav li a.redirect:hover {
     background-color: white;
     border-radius: 10px;
     padding: 15px;
-    margin: 10px 5vw;
+    margin: 10px 0px;
 }
 .card h3 {
     text-align: center;
@@ -80,9 +99,46 @@ nav li a.redirect:hover {
 
 @media (max-width: 767px) {
     .card {
-        margin: 10px 2vw;
+        margin: 10px 0px;
     }
     .card p {
         margin: 5px 2vw;
     } 
+}
+
+/* **** ROW/COL **** */
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    align-items: center;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media screen and (max-width: 767px) {
+    .row {
+        display: block;
+    }
+    .col-25, .col-75 {
+        margin: 10px 0px;
+        width: 100%;
+        margin-top: 0;
+    }
 }

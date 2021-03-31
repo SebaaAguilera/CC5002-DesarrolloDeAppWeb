@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avistamientos</title>
+    <link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="home">AVISTAMIENTOS</a></li>
+            <li><a href="#" class="redirect"> Informar avistamiento </a></li>
+            <li><a href="#" class="redirect"> Ver listado de avistamientos</a></li>
+            <li><a href="#" class="redirect"> Estadísticas </a></li>
+        </ul>
+    </nav>
+    <div class="card">
+        <h3>Formulario para registro de avistamientos</h3>
+        <!-- TO DO: Verificar columna presentación del enunciado -->
+        <!-- TO DO: Validar Required -->
+        <!-- TO DO: Validar inputs -->
+        <!-- TO DO: Framework para calendario -->
+
+        <form action="" method="POST">
+
+            <div class="form-section">
+                <p><b>Lugar:</b></p>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="region">Región:</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="region" id="region" required>
+                            <option value="" disabled selected>Selecciona un región</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="comuna">Comuna:</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="comuna" id="comuna" required>
+                            <option value="" disabled selected>Selecciona una comuna</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="sector">Sector:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="sector" id="sector">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <p><b>Datos de contacto:</b></p>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="nombre">Nombre:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="nombre" id="nombre" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="celular">N° de celular</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="celular" id="celular" size="15">      
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <p><b>Información de avistamiento:</b></p>
+                <!-- Calendario + hora -->
+                <!-- <div class="row">
+                    <div class="col-25">
+
+                    </div>
+                    <div class="col-75">
+
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="tipo-avistamiento">Tipo</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="tipo-avistamiento" id="tipo-avistamiento" required>
+                            <option value="" disabled selected>Selecciona un tipo</option>
+                            <option value="unknown">No sé</option>
+                            <option value="insecto">Insecto</option>
+                            <option value="arácnido">Arácnido</option>
+                            <option value="miriápodo">Miriápodo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="estado-avistamiento">Estado</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="estado-avistamiento" id="estado-avistamiento" required>
+                            <option value="" disabled selected>Selecciona un estado</option>
+                            <option value="unknown">No sé</option>
+                            <option value="vivo">Vivo</option>
+                            <option value="muerto">Muerto</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Foto -->
+                <!-- <div class="row">
+                    <div class="col-25">
+
+                    </div>
+                    <div class="col-75">
+                        
+                    </div>
+                </div> -->                
+            </div>
+        </form>
+    </div>
+</body>
+</html>
