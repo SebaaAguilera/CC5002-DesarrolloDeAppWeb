@@ -1,0 +1,52 @@
+/* **** HOME **** */
+
+.home-report {
+    margin: 10px 2vw;
+    padding: 10px 0px;
+    height: 200px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+.home-report .description {
+    margin: auto 5vw;
+    width: 50%;
+}
+.home-report .image {
+    text-align: center;
+    margin: auto 0px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.home-report .image img{
+    width: auto;
+    height: 100%;
+}
+
+@media (max-width: 767px) {
+    .home-report {
+        letter-spacing: -1px;
+    }  
+}
+
+@media (max-width: 575px) {
+    .home-report {
+        padding: auto;
+        text-align: center;
+        height: 270px;
+        display: block;
+        flex-direction: row;
+        box-sizing: border-box;
+    }
+    .home-report .description {
+        margin: auto;
+        width: 100%;
+        display: inline;
+    }   
+}

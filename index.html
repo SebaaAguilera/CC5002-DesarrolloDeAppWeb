@@ -7,6 +7,7 @@
     <title>Avistamientos</title>
     <link rel="icon" type="image/svg" href="./assets/svg/buddy-30624.svg" sizes="any">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
 </head>
 <body>
     <nav>
@@ -15,7 +16,7 @@
             <li><a href="#" class="redirect"> Informar avistamiento </a></li>
             <li><a href="#" class="redirect"> Ver listado de avistamientos</a></li>
             <li><a href="#" class="redirect"> Estadísticas </a></li>
-        </ul>       
+        </ul>
     </nav>
     <div class="card">
         <h3>¡Bienvenido a nuestro sistema!</h3>
@@ -27,9 +28,12 @@
         </p>
     </div>
     <div class="card">
+        <!-- Images taken from https://www.insectimages.org/index.cfm -->
         <h3>Últimos avistamientos</h3>
         <div id="lastReports"></div>
     </div>
+
+    <!--  Script debe estar al final para que tome la id lastReports  -->
+    <script src="./assets/js/lastReports.js"></script>
 </body>
-<script src="./assets/js/lastReports.js"></script>
 </html>
