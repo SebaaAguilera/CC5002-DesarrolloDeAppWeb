@@ -1,3 +1,5 @@
+// Images taken from https://www.insectimages.org/index.cfm
+
 let dummy;
 
 fetch('./assets/json/dummy.json')
@@ -19,11 +21,10 @@ fetch('./assets/json/dummy.json')
                     <p><b>Sector:</b> ${element.sector}</p>
                     <p><b>Tipo:</b> ${element.tipo}</p>
                 </div>
-                <div>
-                    <p>Imagen: src: ${element.img.src} alt: ${element.img.alt}</p>
+                <div class="image">
+                    <img src="${element.img.src}" alt="${element.img.alt}">
                 </div>
-            </div>
-        `);
+            </div>`);
     });
 
 

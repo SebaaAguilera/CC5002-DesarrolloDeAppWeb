@@ -1,3 +1,4 @@
+
 {
     "avistamientos": [
         {
@@ -6,7 +7,7 @@
            "sector": "Vicuña Mackena",
            "tipo": "insecto",
            "img": {
-               "src":"/",
+               "src":"https://bugwoodcloud.org/images/384x256/5386131.jpg",
                "alt":"chinita"
            }
         },
@@ -16,7 +17,7 @@
             "sector": "Plaza Italia",
             "tipo": "arácnido",
             "img": {
-                "src":"/",
+                "src":"https://bugwoodcloud.org/images/384x256/5506414.jpg",
                 "alt":"tarantula"
             }
          }

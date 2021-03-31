@@ -81,8 +81,38 @@ nav li a.redirect:hover {
 }
 
 .card .home-report {
-    padding: 5px 0px;
+    margin: 10px 2vw;
+    padding: 10px 0px;
+    height: 200px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
 }
+
+.home-report .description {
+    margin: auto 5vw;
+    width: 50%;
+}
+
+.home-report .image {
+    text-align: center;
+    margin: auto 0px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+}
+
+.home-report .image img{
+    width: auto;
+    height: 100%;
+}
+
 
 @media (max-width: 767px) {
     .card {
@@ -91,6 +121,15 @@ nav li a.redirect:hover {
 
     .card p {
         margin: 5px 2vw;
+    }
+
+    .card .home-report {
+        margin: 10px 0vw;
+        letter-spacing: -1px;
+    }
+    
+    .home-report .description {
+        margin: auto 0vw;
     }
     
 }
