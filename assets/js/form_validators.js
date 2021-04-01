@@ -1,6 +1,7 @@
 
-const mailRegEx = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+const mailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 const phoneRegex = /^(\+?56)?(\s?)(0?9)(\s?)[9876543]\d{7}$/;
+const datetimeRegex = /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})/;
 
 function validateEmpty(id) {
     const node = document.forms['formReport'][id];
@@ -9,7 +10,7 @@ function validateEmpty(id) {
 
 function validateMail() {
     const node = document.forms['formReport']['email'];
-    const isValid = mailRegEx.test(node.value);
+    const isValid = mailRegex.test(node.value);
     console.log('Mail validation: ',isValid);
     return isValid;
 }
@@ -22,9 +23,23 @@ function validatePhone() {
     return isValid;
 }
 
+function getDatetime() {
+    const date = new Date();
+    const day = ("0" + date.getDate()).slice(-2);
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    return `${year}-${month}-${day} ${hours}:${minutes}`
+}
+
 function validateDate() {
     // TO DO
-    return true
+    const node = document.forms['formReport']['dia-hora-avistamiento'];
+    node.value = node.value.substring(0,16);
+    const isValid = datetimeRegex.test(node.value);
+    console.log('Datetime validation: ', isValid);
+    return isValid;
 }
 
 function validateForm() {
@@ -54,3 +69,8 @@ function validateForm() {
         return false;
     }
 }
+
+/* **** MAIN **** */
+
+const datetime = document.forms['formReport']['dia-hora-avistamiento'];
+datetime.value = getDatetime();

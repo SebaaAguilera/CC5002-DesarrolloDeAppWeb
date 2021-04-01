@@ -12,6 +12,7 @@ function deleteOptions(id) {
     while (selector.options.length > 1) {
         selector.remove(1);
     }
+    selector.value = '';
 }
 
 function updateCommunes() {

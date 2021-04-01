@@ -8,7 +8,6 @@
     <link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/form.css">
-    <script src="../assets/js/form_validators.js"></script>
     <script src="../assets/js/form_region_comuna_select.js"></script>
 </head>
 <body>
@@ -56,7 +55,7 @@
                         <label for="sector">Sector:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="sector" id="sector">
+                        <input type="text" name="sector" id="sector" size="200" maxlength="100">
                     </div>
                 </div>
             </div>
@@ -77,7 +76,7 @@
                     </div>
                     <div class="col-75">
                         <input type="email" name="email" id="email" placeholder="example@mail.cl" required
-                        onkeypress="validateMail()" onblur="validateMail()"
+                        onkeyup="validateMail()" onblur="validateMail()"
                         >
                     </div>
                 </div>
@@ -87,22 +86,22 @@
                     </div>
                     <div class="col-75">
                         <input type="text" name="celular" id="celular" size="15" placeholder="+56964669029"
-                        onkeypress="validatePhone()" onblur="validatePhone()">      
+                        onkeyup="validatePhone()" onblur="validatePhone()">      
                     </div>
                 </div>
             </div>
 
             <div class="form-section">
                 <p><b>Información de avistamiento:</b></p>
-                <!-- Calendario + hora -->
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-25">
-
+                        <label for="dia-hora-avistamiento">Día hora:</label>
                     </div>
                     <div class="col-75">
-
+                        <input type="text" name="dia-hora-avistamiento" id="dia-hora-avistamiento"
+                        onkeyup="validateDate()" onblur="validateDate()">
                     </div>
-                </div> -->
+                </div>
                 <div class="row">
                     <div class="col-25">
                         <label for="tipo-avistamiento">Tipo</label>
@@ -145,5 +144,6 @@
             </div>
         </form>
     </div>
+    <script src="../assets/js/form_validators.js"></script>
 </body>
 </html>
