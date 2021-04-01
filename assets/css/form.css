@@ -27,9 +27,14 @@
     resize: vertical;
 }
 
+
 .form-section label {
     padding: auto;
     display: inline-block;
+}
+
+.form-button {
+    text-align: center;
 }
 
 @media (max-width: 767px) {

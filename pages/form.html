@@ -8,6 +8,8 @@
     <link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/form.css">
+    <script src="../assets/js/form_validators.js"></script>
+
 </head>
 <body>
     <nav>
@@ -25,7 +27,7 @@
         <!-- TO DO: Validar inputs -->
         <!-- TO DO: Framework para calendario -->
 
-        <form action="" method="POST">
+        <form action="" method="POST" name="formReport" onsubmit="validateForm">
 
             <div class="form-section">
                 <p><b>Lugar:</b></p>
@@ -34,7 +36,7 @@
                         <label for="region">Región:</label>
                     </div>
                     <div class="col-75">
-                        <select name="region" id="region" required>
+                        <select name="region" id="region" required onchange="">
                             <option value="" disabled selected>Selecciona un región</option>
                             <option value="volvo">Volvo</option>
                             <option value="saab">Saab</option>
@@ -74,7 +76,7 @@
                         <label for="nombre">Nombre:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="nombre" id="nombre" required>
+                        <input type="text" name="nombre" id="nombre" placeholder="Juan Perez" required>
                     </div>
                 </div>
                 <div class="row">
@@ -82,7 +84,9 @@
                         <label for="email">Email:</label>
                     </div>
                     <div class="col-75">
-                        <input type="email" name="email" id="email" required>
+                        <input type="email" name="email" id="email" placeholder="example@mail.cl" required
+                        onkeypress="validateMail()" onblur="validateMail()"
+                        >
                     </div>
                 </div>
                 <div class="row">
@@ -90,7 +94,8 @@
                         <label for="celular">N° de celular</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="celular" id="celular" size="15">      
+                        <input type="text" name="celular" id="celular" size="15" placeholder="+56964669029"
+                        onkeypress="validatePhone()" onblur="validatePhone()">      
                     </div>
                 </div>
             </div>
@@ -142,6 +147,9 @@
                         
                     </div>
                 </div> -->                
+            </div>
+            <div class="form-button">
+                <button type="submit" id="form-button""><b>Enviar Formulario</b></button>
             </div>
         </form>
     </div>
