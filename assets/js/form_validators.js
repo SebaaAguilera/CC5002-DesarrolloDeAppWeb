@@ -53,5 +53,4 @@ function validateForm() {
         alert('Rellena estado');
         return false;
     }
-
 }

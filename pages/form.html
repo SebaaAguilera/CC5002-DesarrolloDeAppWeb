@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/form.css">
     <script src="../assets/js/form_validators.js"></script>
-
+    <script src="../assets/js/form_region_comuna_select.js"></script>
 </head>
 <body>
     <nav>
@@ -36,12 +36,8 @@
                         <label for="region">Región:</label>
                     </div>
                     <div class="col-75">
-                        <select name="region" id="region" required onchange="">
+                        <select name="region" id="region" required onchange="updateCommunes()">
                             <option value="" disabled selected>Selecciona un región</option>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
                         </select>
                     </div>
                 </div>
@@ -52,10 +48,6 @@
                     <div class="col-75">
                         <select name="comuna" id="comuna" required>
                             <option value="" disabled selected>Selecciona una comuna</option>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
                         </select>
                     </div>
                 </div>
