@@ -30,4 +30,9 @@ fetch('../assets/json/regions.json').then(response => {
     // global: regions
     regions = data.regions;
     addOptions(regions,'region');
+
+    const regionValue = document.forms['formReport']['region'];
+    if (regionValue != '') {
+        updateCommunes();
+    }
 })

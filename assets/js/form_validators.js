@@ -44,8 +44,15 @@ function validateDate() {
 
 // FIX ME tendrá que validar tipo tambien
 function validateFiles() {
-    const node = document.forms['formReport']['foto-avistamiento'];
-    return node.files.length > 0 && node.files.length <= 5;
+    const fileInputs = document.getElementsByClassName('file-input-div');
+    let filesAmount = 0;
+    console.log('a', fileInputs)
+    for (let i = 0; i < fileInputs.length; i++) {
+        console.log(fileInputs[i].children[0].children[1].files)
+        filesAmount += fileInputs[i].children[0].children[1].files.length;
+    }
+    const isValid = filesAmount > 0 && filesAmount <= 5;
+    return isValid;
 }
 
 function validateForm() {
@@ -73,8 +80,8 @@ function validateForm() {
     } else if (validateEmpty('estado-avistamiento')) {
         alert('Rellena estado');
         return false;
-    } else if (validateFiles()) {
-        alert('Debes subur entre 1 y 5 fotos')
+    } else if (!validateFiles()) {
+        alert('Debes subir entre 1 y 5 fotos')
         return false
     }
 }

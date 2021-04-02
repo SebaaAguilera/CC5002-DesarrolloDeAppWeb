@@ -7,7 +7,7 @@
 }
 
 .card .form-section {
-    margin: 5px 10vw;
+    margin: 5px 8vw;
     padding: 10px 0px;
 }
 
@@ -73,6 +73,16 @@ input[type="file"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .file-upload {
+        width: 57%;
+    }
+    
+    .new-file{
+        width: 40%;
+    }
 }
 
 @media (max-width: 767px) {

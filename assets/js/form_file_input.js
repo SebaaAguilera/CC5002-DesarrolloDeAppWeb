@@ -1,7 +1,6 @@
 function showFiles() {
     const fileInputs = document.getElementsByClassName('file-input-div');
     for (let i = 0; i < fileInputs.length; i++) {
-        let innerHTML = '';
         let node = document.getElementById('file-input-list').children[i].children[0].children[1];
         let output = document.getElementsByClassName('file-input-text')[i];
         output.innerHTML = node.files.item(0) ? `Archivo: ${node.files.item(0).name}`: 'Subir foto';

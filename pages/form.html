@@ -26,36 +26,36 @@
         <!-- TO DO: Validar inputs -->
         <!-- TO DO: Framework para calendario -->
 
-        <form action="" method="POST" name="formReport" onsubmit="validateForm">
+        <form action="#" method="POST" name="formReport" onsubmit="return validateForm()">
 
             <div class="form-section">
                 <p><b>Lugar:</b></p>
                 <div class="row">
                     <div class="col-25">
-                        <label for="region">Región:</label>
+                        <label>Región:</label>
                     </div>
                     <div class="col-75">
-                        <select name="region" id="region" required onchange="updateCommunes()">
+                        <select name="region" required onchange="updateCommunes()">
                             <option value="" disabled selected>Selecciona un región</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="comuna">Comuna:</label>
+                        <label>Comuna:</label>
                     </div>
                     <div class="col-75">
-                        <select name="comuna" id="comuna" required>
+                        <select name="comuna" required>
                             <option value="" disabled selected>Selecciona una comuna</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="sector">Sector:</label>
+                        <label>Sector:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="sector" id="sector" size="200" maxlength="100">
+                        <input type="text" name="sector" size="200" maxlength="100">
                     </div>
                 </div>
             </div>
@@ -64,28 +64,28 @@
                 <p><b>Datos de contacto:</b></p>
                 <div class="row">
                     <div class="col-25">
-                        <label for="nombre">Nombre:</label>
+                        <label">Nombre:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="nombre" id="nombre" placeholder="Juan Perez" required>
+                        <input type="text" name="nombre" placeholder="Juan Perez" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="email">Email:</label>
+                        <label>Email:</label>
                     </div>
                     <div class="col-75">
-                        <input type="email" name="email" id="email" placeholder="example@mail.cl" required
+                        <input type="email" name="email" placeholder="example@mail.cl" required
                         onkeyup="validateMail()" onblur="validateMail()"
                         >
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="celular">N° de celular</label>
+                        <label>N° de celular</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="celular" id="celular" size="15" placeholder="+56964669029"
+                        <input type="text" name="celular" size="15" placeholder="+56964669029"
                         onkeyup="validatePhone()" onblur="validatePhone()">      
                     </div>
                 </div>
@@ -95,19 +95,19 @@
                 <p><b>Información de avistamiento:</b></p>
                 <div class="row">
                     <div class="col-25">
-                        <label for="dia-hora-avistamiento">Día hora:</label>
+                        <label>Día hora:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="dia-hora-avistamiento" id="dia-hora-avistamiento"
+                        <input type="text" name="dia-hora-avistamiento"
                         onkeyup="validateDate()" onblur="validateDate()">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="tipo-avistamiento">Tipo</label>
+                        <label>Tipo</label>
                     </div>
                     <div class="col-75">
-                        <select name="tipo-avistamiento" id="tipo-avistamiento" required>
+                        <select name="tipo-avistamiento" required>
                             <option value="" disabled selected>Selecciona un tipo</option>
                             <option value="unknown">No sé</option>
                             <option value="insecto">Insecto</option>
@@ -118,10 +118,10 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="estado-avistamiento">Estado</label>
+                        <label>Estado</label>
                     </div>
                     <div class="col-75">
-                        <select name="estado-avistamiento" id="estado-avistamiento" required>
+                        <select name="estado-avistamiento" required>
                             <option value="" disabled selected>Selecciona un estado</option>
                             <option value="unknown">No sé</option>
                             <option value="vivo">Vivo</option>
