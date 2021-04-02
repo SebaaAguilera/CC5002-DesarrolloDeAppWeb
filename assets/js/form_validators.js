@@ -42,17 +42,6 @@ function validateDate() {
     return isValid;
 }
 
- function showFiles() {
-    const node = document.forms['formReport']['foto-avistamiento'];
-    const output = document.getElementById('file-list');
-    let html = '';
-    for (let i = 0; i < node.files.length; ++i) {
-        html += `<ul>${node.files.item(i).name}</ul>`;
-    };
-    output.innerHTML = html;
-
- }
-
 // FIX ME tendrá que validar tipo tambien
 function validateFiles() {
     const node = document.forms['formReport']['foto-avistamiento'];

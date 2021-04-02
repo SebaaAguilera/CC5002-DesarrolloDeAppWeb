@@ -48,21 +48,32 @@
 input[type="file"] {
     display: none;
 }
+
+.file-input-div {
+    margin-top: 6px;
+}
+
 .file-upload {
     font-size: 13px;
     display: inline-block;
-    width: 100%;
+    width: 60%;
     padding: 12px 0px;
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.file-list {
-    margin: 0px;
+.new-file{
+    font-size: 13px;
+    letter-spacing: -1.2px;
+    font-weight: 400;
+    width: 38%;
+    height: 52px;
+    padding: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
 }
-
-
 
 @media (max-width: 767px) {
     .card form {

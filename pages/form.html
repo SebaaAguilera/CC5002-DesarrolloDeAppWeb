@@ -133,12 +133,14 @@
                     <div class="col-25">
                         <label>Foto:</label>
                     </div>
-                    <div class="col-75">
-                        <label class="file-upload">
-                            Subir fotos
-                            <input type="file" name="foto-avistamiento" multiple onchange="showFiles()">
-                        </label>
-                        <ul id="file-list"></ul>
+                    <div class="col-75" id="file-input-list">
+                        <div class="file-input-div">
+                            <label class="file-upload">
+                                <p class="file-input-text">Subir foto</p>
+                                <input type="file" name="foto-avistamiento-0" onchange="showFiles()">
+                            </label>
+                            <button type="button" class="new-file" onclick="addFileInput()">Agregar otra foto</button>
+                        </div>
                     </div>
                 </div>       
             </div>
@@ -148,5 +150,6 @@
         </form>
     </div>
     <script src="../assets/js/form_validators.js"></script>
+    <script src="../assets/js/form_file_input.js"></script>
 </body>
 </html>
