@@ -56,7 +56,7 @@ function validateDate() {
 // FIX ME tendrá que validar tipo tambien
 function validateFiles() {
     const node = document.forms['formReport']['foto-avistamiento'];
-    return node.files.length > 0;
+    return node.files.length > 0 && node.files.length <= 5;
 }
 
 function validateForm() {
@@ -85,7 +85,7 @@ function validateForm() {
         alert('Rellena estado');
         return false;
     } else if (validateFiles()) {
-        alert('Debes subir al menos una foto')
+        alert('Debes subur entre 1 y 5 fotos')
         return false
     }
 }
