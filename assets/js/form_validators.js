@@ -10,6 +10,7 @@ function validateEmpty(id) {
 
 function validateMail() {
     const node = document.forms['formReport']['email'];
+    node.value = node.value.replace(/\s/g, '');
     const isValid = mailRegex.test(node.value);
     console.log('Mail validation: ',isValid);
     return isValid;
@@ -30,16 +31,32 @@ function getDatetime() {
     const year = date.getFullYear();
     const hours = date.getHours();
     const minutes = date.getMinutes();
-    return `${year}-${month}-${day} ${hours}:${minutes}`
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
 function validateDate() {
-    // TO DO
     const node = document.forms['formReport']['dia-hora-avistamiento'];
     node.value = node.value.substring(0,16);
     const isValid = datetimeRegex.test(node.value);
     console.log('Datetime validation: ', isValid);
     return isValid;
+}
+
+ function showFiles() {
+    const node = document.forms['formReport']['foto-avistamiento'];
+    const output = document.getElementById('file-list');
+    let html = '';
+    for (let i = 0; i < node.files.length; ++i) {
+        html += `<ul>${node.files.item(i).name}</ul>`;
+    };
+    output.innerHTML = html;
+
+ }
+
+// FIX ME tendrá que validar tipo tambien
+function validateFiles() {
+    const node = document.forms['formReport']['foto-avistamiento'];
+    return node.files.length > 0;
 }
 
 function validateForm() {
@@ -67,6 +84,9 @@ function validateForm() {
     } else if (validateEmpty('estado-avistamiento')) {
         alert('Rellena estado');
         return false;
+    } else if (validateFiles()) {
+        alert('Debes subir al menos una foto')
+        return false
     }
 }
 

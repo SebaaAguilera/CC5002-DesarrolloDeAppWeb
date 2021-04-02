@@ -36,7 +36,7 @@
     text-align: center;
 }
 
-#form-button {
+.form-button button {
     background-color: rgba(44,82,47,1) ;
     color: white;
     padding: 5px;
@@ -44,6 +44,25 @@
     border-radius: 32px;
     border: 0px solid #ccc;
 }
+
+input[type="file"] {
+    display: none;
+}
+.file-upload {
+    font-size: 13px;
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-list {
+    margin: 0px;
+}
+
+
 
 @media (max-width: 767px) {
     .card form {

@@ -129,18 +129,21 @@
                         </select>
                     </div>
                 </div>
-                <!-- Foto -->
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-25">
-
+                        <label>Foto:</label>
                     </div>
                     <div class="col-75">
-                        
+                        <label class="file-upload">
+                            Subir fotos
+                            <input type="file" name="foto-avistamiento" multiple onchange="showFiles()">
+                        </label>
+                        <ul id="file-list"></ul>
                     </div>
-                </div> -->                
+                </div>       
             </div>
             <div class="form-button">
-                <button type="submit" id="form-button""><b>Enviar Formulario</b></button>
+                <button type="submit"><b>Enviar Formulario</b></button>
             </div>
         </form>
     </div>
