@@ -1,3 +1,9 @@
+/*
+ * TO DO:
+ * * Si alcanza el tiempo:
+ * * Eliminar archivo 
+ */
+
 function showFiles() {
     const fileInputs = document.getElementsByClassName('file-input-div');
     for (let i = 0; i < fileInputs.length; i++) {
@@ -11,12 +17,13 @@ function addFileInput() {
     const fileInputs = document.getElementsByClassName('file-input-div');
     if (fileInputs.length < 5) {
         const fileInputList = document.getElementById('file-input-list');
-        const newFileInputDiv = fileInputs[0].cloneNode(true);
+        const newFileInputDiv = fileInputs[fileInputs.length-1].cloneNode(true);
         newFileInputDiv.children[0].children[0].innerHTML = 'Subir foto';
 
         const newInputElement = document.createElement('input');
         newInputElement.setAttribute("type", "file");
-        newInputElement.setAttribute("name", `foto-avistamineto-${fileInputs.length}`);
+        newInputElement.setAttribute("name", 'foto-avistamineto');
+        newInputElement.setAttribute("name", `foto-avistamineto-0-${fileInputs.length}`);
         newInputElement.onchange = () => {
             showFiles();
         };

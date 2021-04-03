@@ -8,6 +8,8 @@ function validateEmpty(id) {
     return node.value == '';
 }
 
+// Contact Validation
+
 function validateMail() {
     const node = document.forms['formReport']['email'];
     node.value = node.value.replace(/\s/g, '');
@@ -24,6 +26,8 @@ function validatePhone() {
     return isValid;
 }
 
+// Report Valdiation
+
 function getDatetime() {
     const date = new Date();
     const day = ("0" + date.getDate()).slice(-2);
@@ -34,12 +38,21 @@ function getDatetime() {
     return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
+
 function validateDate() {
     const node = document.forms['formReport']['dia-hora-avistamiento'];
     node.value = node.value.substring(0,16);
     const isValid = datetimeRegex.test(node.value);
     console.log('Datetime validation: ', isValid);
     return isValid;
+}
+
+function validateType () {
+    return true;
+}
+
+function validateStatus() {
+    return true;
 }
 
 // FIX ME tendrá que validar tipo tambien

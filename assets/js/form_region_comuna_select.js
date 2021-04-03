@@ -1,14 +1,14 @@
 let regions;
 
-function addOptions(array,id) {
-    const select = document.forms['formReport'][id];
+function addOptions(array,name) {
+    const select = document.forms['formReport'][name];
     array.forEach(element => {
         select.options[select.options.length] = new Option(element.name, element.number)
     });
 }
 
-function deleteOptions(id) {
-    const selector = document.forms['formReport'][id];
+function deleteOptions(name) {
+    const selector = document.forms['formReport'][name];
     while (selector.options.length > 1) {
         selector.remove(1);
     }

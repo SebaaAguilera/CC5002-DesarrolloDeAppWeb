@@ -8,7 +8,6 @@
     <link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/form.css">
-    <script src="../assets/js/form_region_comuna_select.js"></script>
 </head>
 <body>
     <nav>
@@ -76,7 +75,7 @@
                     </div>
                     <div class="col-75">
                         <input type="email" name="email" placeholder="example@mail.cl" required
-                        onkeyup="validateMail()" onblur="validateMail()"
+                        onkeyup="validateMail()"
                         >
                     </div>
                 </div>
@@ -86,20 +85,20 @@
                     </div>
                     <div class="col-75">
                         <input type="text" name="celular" size="15" placeholder="+56964669029"
-                        onkeyup="validatePhone()" onblur="validatePhone()">      
+                        onkeyup="validatePhone()">      
                     </div>
                 </div>
             </div>
 
-            <div class="form-section">
-                <p><b>Información de avistamiento:</b></p>
+            <div class="form-section" id="report-0">
+                <p><b>Información de avistamiento n°1:</b></p>
                 <div class="row">
                     <div class="col-25">
                         <label>Día hora:</label>
                     </div>
                     <div class="col-75">
                         <input type="text" name="dia-hora-avistamiento"
-                        onkeyup="validateDate()" onblur="validateDate()">
+                        onkeyup="validateDate()">
                     </div>
                 </div>
                 <div class="row">
@@ -137,7 +136,7 @@
                         <div class="file-input-div">
                             <label class="file-upload">
                                 <p class="file-input-text">Subir foto</p>
-                                <input type="file" name="foto-avistamiento-0" onchange="showFiles()">
+                                <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" onchange="showFiles()">
                             </label>
                             <button type="button" class="new-file" onclick="addFileInput()">Agregar otra foto</button>
                         </div>
@@ -145,11 +144,14 @@
                 </div>       
             </div>
             <div class="form-button">
+                <button type="button" class="white-button" onclick="newReport()"><b>Informar otro avistamiento en este sector</b></button>
                 <button type="submit"><b>Enviar Formulario</b></button>
             </div>
         </form>
     </div>
+    <script src="../assets/js/form_region_comuna_select.js"></script>
     <script src="../assets/js/form_validators.js"></script>
     <script src="../assets/js/form_file_input.js"></script>
+    <script src="../assets/js/form_new_report.js"></script>
 </body>
 </html>
