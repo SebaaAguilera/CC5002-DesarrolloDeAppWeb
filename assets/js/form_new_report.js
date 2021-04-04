@@ -8,6 +8,8 @@ function newReport() {
     const fileInputList = newReport.children[4].children[1];
 
     fileInputList.id = `file-input-list-${reports.length}`;
+    fileInputList.children[0].children[0].children[0].innerHTML = 'Subir foto';
+    fileInputList.children[0].children[0].children[1].value = '';
     fileInputList.children[0].children[0].children[1].id = `foto-avistamiento-${reports.length}-0`;
     fileInputList.children[0].children[1].id = `button-avistamiento-${reports.length}`;
 

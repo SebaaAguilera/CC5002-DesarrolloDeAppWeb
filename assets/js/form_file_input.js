@@ -8,15 +8,9 @@ function showFiles(id) {
     const reportFile = id.split('-');
     console.log(reportFile)
     const reportDiv = document.getElementById(`report-${reportFile[2]}`);
-    const fileName = reportDiv.children[4].children[1].children[0].children[0].children[1].files.item(0).name
-    reportDiv.children[4].children[1].children[0].children[0].children[0].innerHTML = `${fileName}`;
-
-    // const fileInputs = document.getElementsByClassName('file-input-div');
-    // for (let i = 0; i < fileInputs.length; i++) {
-    //     let node = document.getElementById('file-input-list').children[i].children[0].children[1];
-    //     let output = document.getElementsByClassName('file-input-text')[i];
-    //     output.innerHTML = node.files.item(0) ? `Archivo: ${node.files.item(0).name}` : 'Subir foto';
-    // }
+    const fileInputDiv = reportDiv.children[4].children[1].children[reportFile[3]].children[0];
+    const fileName = fileInputDiv.children[1].files.item(0).name
+    fileInputDiv.children[0].innerHTML = `${fileName}`;
 }
 
 function addFileInput(button) {
@@ -28,6 +22,7 @@ function addFileInput(button) {
         const fileInputList = document.getElementById(`file-input-list-${button.split('-')[2]}`);
         const newFileInputDiv = fileInputs.children[fileInputs.childElementCount-1].cloneNode(true);
         newFileInputDiv.children[0].children[0].innerHTML = 'Subir foto';
+        newFileInputDiv.children[0].children[1].value = '';
         newFileInputDiv.children[0].children[1].setAttribute("id", `foto-avistamineto-${button.split('-')[2]}-${fileInputs.childElementCount}`);
         fileInputList.appendChild(newFileInputDiv);
     }
