@@ -39,7 +39,7 @@ function getDatetime() {
 }
 
 
-function validateDate() {
+function validateDate(report) {
     const node = document.forms['formReport']['dia-hora-avistamiento'];
     node.value = node.value.substring(0,16);
     const isValid = datetimeRegex.test(node.value);

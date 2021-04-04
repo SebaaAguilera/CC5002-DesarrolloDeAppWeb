@@ -90,58 +90,60 @@
                 </div>
             </div>
 
-            <div class="form-section" id="report-0">
-                <p><b>Información de avistamiento n°1:</b></p>
-                <div class="row">
-                    <div class="col-25">
-                        <label>Día hora:</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" name="dia-hora-avistamiento"
-                        onkeyup="validateDate()">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label>Tipo</label>
-                    </div>
-                    <div class="col-75">
-                        <select name="tipo-avistamiento" required>
-                            <option value="" disabled selected>Selecciona un tipo</option>
-                            <option value="unknown">No sé</option>
-                            <option value="insecto">Insecto</option>
-                            <option value="arácnido">Arácnido</option>
-                            <option value="miriápodo">Miriápodo</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label>Estado</label>
-                    </div>
-                    <div class="col-75">
-                        <select name="estado-avistamiento" required>
-                            <option value="" disabled selected>Selecciona un estado</option>
-                            <option value="unknown">No sé</option>
-                            <option value="vivo">Vivo</option>
-                            <option value="muerto">Muerto</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label>Foto:</label>
-                    </div>
-                    <div class="col-75" id="file-input-list">
-                        <div class="file-input-div">
-                            <label class="file-upload">
-                                <p class="file-input-text">Subir foto</p>
-                                <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" onchange="showFiles()">
-                            </label>
-                            <button type="button" class="new-file" onclick="addFileInput()">Agregar otra foto</button>
+            <div class="form-section" id="reports">
+                <div class="report" id="report-0">
+                    <p><b>Información de avistamiento n°1:</b></p>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Día hora:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="dia-hora-avistamiento"
+                            onkeyup="validateDate(0)">
                         </div>
                     </div>
-                </div>       
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Tipo</label>
+                        </div>
+                        <div class="col-75">
+                            <select name="tipo-avistamiento" required>
+                                <option value="" disabled selected>Selecciona un tipo</option>
+                                <option value="unknown">No sé</option>
+                                <option value="insecto">Insecto</option>
+                                <option value="arácnido">Arácnido</option>
+                                <option value="miriápodo">Miriápodo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Estado</label>
+                        </div>
+                        <div class="col-75">
+                            <select name="estado-avistamiento" required>
+                                <option value="" disabled selected>Selecciona un estado</option>
+                                <option value="unknown">No sé</option>
+                                <option value="vivo">Vivo</option>
+                                <option value="muerto">Muerto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Foto:</label>
+                        </div>
+                        <div class="col-75" id="file-input-list-0">
+                            <div class="file-input-div">
+                                <label class="file-upload">
+                                    <p class="file-input-text">Subir foto</p>
+                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" onchange="showFiles(this.id)">
+                                </label>
+                                <button type="button" class="new-file" id="button-avistamiento-0" onclick="addFileInput(this.id)">Agregar otra foto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
             </div>
             <div class="form-button">
                 <button type="button" class="white-button" onclick="newReport()"><b>Informar otro avistamiento en este sector</b></button>
