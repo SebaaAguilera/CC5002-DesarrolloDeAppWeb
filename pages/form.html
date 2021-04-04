@@ -54,7 +54,8 @@
                         <label>Sector:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="sector" size="200" maxlength="100">
+                        <input type="text" name="sector" size="200" maxlength="100"
+                        onkeyup="validateSectorLength()">
                     </div>
                 </div>
             </div>
@@ -66,7 +67,9 @@
                         <label">Nombre:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="nombre" placeholder="Juan Perez" required>
+                        <input type="text" name="nombre" placeholder="Juan Perez" 
+                        size="100" maxlength="200" onkeyup="validateNameLength()"
+                        required>
                     </div>
                 </div>
                 <div class="row">
@@ -74,9 +77,8 @@
                         <label>Email:</label>
                     </div>
                     <div class="col-75">
-                        <input type="email" name="email" placeholder="example@mail.cl" required
-                        onkeyup="validateMail()"
-                        >
+                        <input type="email" name="email" placeholder="example@mail.cl"
+                        size="100" onkeyup="validateMail()" required>
                     </div>
                 </div>
                 <div class="row">
@@ -137,7 +139,7 @@
                             <div class="file-input-div">
                                 <label class="file-upload">
                                     <p class="file-input-text">Subir foto</p>
-                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" value="" onchange="showFiles(this.id)">
+                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" value="" accept="image/*"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              onchange="showFiles(this.id)">
                                 </label>
                                 <button type="button" class="new-file" id="button-avistamiento-0" onclick="addFileInput(this.id)">Agregar otra foto</button>
                             </div>

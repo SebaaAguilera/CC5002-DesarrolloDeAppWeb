@@ -6,7 +6,6 @@
 
 function showFiles(id) {
     const reportFile = id.split('-');
-    console.log(reportFile)
     const reportDiv = document.getElementById(`report-${reportFile[2]}`);
     const fileInputDiv = reportDiv.children[4].children[1].children[reportFile[3]].children[0];
     const fileName = fileInputDiv.children[1].files.item(0).name
@@ -14,10 +13,8 @@ function showFiles(id) {
 }
 
 function addFileInput(button) {
-    console.log(button)
     const report = document.getElementById(`report-${button.split('-')[2]}`)
     const fileInputs = report.children[4].children[1];
-    console.log(fileInputs.childElementCount)
     if (fileInputs.childElementCount < 5) {
         const fileInputList = document.getElementById(`file-input-list-${button.split('-')[2]}`);
         const newFileInputDiv = fileInputs.children[fileInputs.childElementCount-1].cloneNode(true);

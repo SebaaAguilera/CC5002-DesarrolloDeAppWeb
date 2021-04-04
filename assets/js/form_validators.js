@@ -1,8 +1,7 @@
 /* 
  * TO DO
- * Validar largos y sizes en html y javascript
- * validar archivos y tipo
- * cambiar a rojo la caja del input o select que falta llenar o está mal llenado
+ * Si se tiene tiempo:
+ * * cambiar a rojo la caja del input o select que falta llenar o está mal llenado
  */
 
 
@@ -15,7 +14,23 @@ function validateEmpty(id) {
     return node.value == '';
 }
 
+function validateLength(name,length) {
+    const node = document.forms['formReport'][name];
+    node.value = node.value.substring(0,length);
+}
+
+// Place Validation
+
+function validateSector() {
+    validateLength('sector',100);
+}
+
 // Contact Validation
+
+function validateName() {
+    validateLength('sector',200);
+
+}
 
 function validateMail() {
     const node = document.forms['formReport']['email'];
@@ -86,16 +101,27 @@ function validateFiles() {
         let count = 0;
         const fileInputs = reports[i].children[4].children[1];
         for (let i = 0; i < fileInputs.children.length; i++) {
-            count += fileInputs.children[i].children[0].children[1].files.length;
+            let files = fileInputs.children[i].children[0].children[1].files;
+            if (files.length > 1) {
+                isValid = false;
+                break;    
+            } else if (files.length == 1 && files.item(0).type.substring(0,5) != 'image') {
+                isValid = false;
+                break;
+            }
+            count += files.length;
         }
         if (count == 0 || count > 5) {
             isValid = false;
+            break;
         }
     }
     return isValid;
 }
 
 function validateForm() {
+    validateSector();
+
     if (validateEmpty('region')) {
         alert('Rellena región');
         return false;
@@ -121,7 +147,7 @@ function validateForm() {
         alert('Rellena estado');
         return false;
     } else if (!validateFiles()) {
-        alert('Debes subir entre 1 y 5 fotos')
+        alert('Debes subir entre 1 y 5 imágenes por avistamiento')
         return false
     }
 }
