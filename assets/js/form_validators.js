@@ -2,6 +2,7 @@
  * TO DO
  * Validar largos y sizes en html y javascript
  * validar archivos y tipo
+ * cambiar a rojo la caja del input o select que falta llenar o está mal llenado
  */
 
 
@@ -79,14 +80,18 @@ function validateStatus() {
 }
 
 function validateFiles() {
-    const fileInputs = document.getElementsByClassName('file-input-div');
-    let filesAmount = 0;
-    console.log('a', fileInputs)
-    for (let i = 0; i < fileInputs.length; i++) {
-        console.log(fileInputs[i].children[0].children[1].files)
-        filesAmount += fileInputs[i].children[0].children[1].files.length;
+    const reports = document.getElementsByClassName('report');
+    let isValid = true;
+    for (let i = 0; i<reports.length; i++) {
+        let count = 0;
+        const fileInputs = reports[i].children[4].children[1];
+        for (let i = 0; i < fileInputs.children.length; i++) {
+            count += fileInputs.children[i].children[0].children[1].files.length;
+        }
+        if (count == 0 || count > 5) {
+            isValid = false;
+        }
     }
-    const isValid = filesAmount > 0 && filesAmount <= 5;
     return isValid;
 }
 
@@ -109,10 +114,10 @@ function validateForm() {
     } else if (!validateDate()) {
         alert('Fecha/hora mal formateada');
         return false;
-    } else if (validateEmpty('tipo-avistamiento')) {
+    } else if (!validateType('tipo-avistamiento')) {
         alert('Rellena tipo');
         return false;
-    } else if (validateEmpty('estado-avistamiento')) {
+    } else if (!validateStatus('estado-avistamiento')) {
         alert('Rellena estado');
         return false;
     } else if (!validateFiles()) {

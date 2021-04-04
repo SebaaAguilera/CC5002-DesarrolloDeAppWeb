@@ -27,3 +27,9 @@ function addFileInput(button) {
         fileInputList.appendChild(newFileInputDiv);
     }
 }
+
+/* **** MAIN **** */
+
+// Cuando recarga a veces aparece un archivo fantasma
+// No es lo ideal, pero controla ese problema
+document.getElementById('foto-avistamiento-0-0').value = '';

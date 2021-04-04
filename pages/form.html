@@ -108,7 +108,7 @@
                         </div>
                         <div class="col-75">
                             <select name="tipo-avistamiento" >
-                                <option value="" disabled selected required>Selecciona un tipo</option>
+                                <option value="" disabled selected >Selecciona un tipo</option>
                                 <option value="unknown">No sé</option>
                                 <option value="insecto">Insecto</option>
                                 <option value="arácnido">Arácnido</option>
@@ -137,7 +137,7 @@
                             <div class="file-input-div">
                                 <label class="file-upload">
                                     <p class="file-input-text">Subir foto</p>
-                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" onchange="showFiles(this.id)">
+                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" value="" onchange="showFiles(this.id)">
                                 </label>
                                 <button type="button" class="new-file" id="button-avistamiento-0" onclick="addFileInput(this.id)">Agregar otra foto</button>
                             </div>
