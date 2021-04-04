@@ -121,6 +121,7 @@ function validateFiles() {
 
 function validateForm() {
     validateSector();
+    validateName();
 
     if (validateEmpty('region')) {
         alert('Rellena región');

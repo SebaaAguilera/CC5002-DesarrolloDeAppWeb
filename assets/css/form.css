@@ -7,7 +7,7 @@
 }
 
 .card .form-section {
-    margin: 5px 8vw;
+    margin: 5px 6vw;
     padding: 10px 0px;
 }
 
@@ -32,6 +32,10 @@
     display: inline-block;
 }
 
+.form-section .report {
+    margin-bottom: 20px;
+}
+
 .form-button {
     text-align: center;
 }
@@ -42,6 +46,7 @@
     padding: 5px;
     margin: 2px 0px;
     width: 50%;
+    letter-spacing: -1px;
     border-radius: 32px;
     border: 0px solid #ccc;
 }
@@ -86,6 +91,11 @@ input[type="file"] {
 }
 
 @media (max-width: 991px) {
+
+    .card .form-section {
+        margin: 5px 1vw;
+    } 
+
     .file-upload {
         width: 57%;
     }
@@ -93,14 +103,18 @@ input[type="file"] {
     .new-file{
         width: 40%;
     }
+
+    .form-button button, .form-button .white-button {
+        width: 60%;
+    }
 }
 
 @media (max-width: 767px) {
     .card form {
         width: 100%;
+    }    
+
+    .form-button button, .form-button .white-button {
+        width: 80%;
     }
-    .card .form-section {
-        margin: 5px 2vw;
-    } 
-    
 }

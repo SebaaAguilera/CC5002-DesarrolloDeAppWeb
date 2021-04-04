@@ -1,4 +1,3 @@
-let regions;
 
 function addOptions(array,name) {
     const select = document.forms['formReport'][name];
@@ -24,6 +23,8 @@ function updateCommunes() {
 
 /* **** MAIN **** */
 
+let regions;
+
 fetch('../assets/json/regions.json').then(response => {
     return response.json();
 }).then(data => {
@@ -31,7 +32,7 @@ fetch('../assets/json/regions.json').then(response => {
     regions = data.regions;
     addOptions(regions,'region');
 
-    const regionValue = document.forms['formReport']['region'];
+    const regionValue = document.forms['formReport']['region'].value;
     if (regionValue != '') {
         updateCommunes();
     }

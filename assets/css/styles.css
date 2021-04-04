@@ -94,7 +94,7 @@ nav li a.redirect:hover {
     color: rgb(0,36,1);
 }
 .card p {
-    margin: 5px 10vw;
+    margin: 5px 8vw;
 }
 
 @media (max-width: 767px) {
