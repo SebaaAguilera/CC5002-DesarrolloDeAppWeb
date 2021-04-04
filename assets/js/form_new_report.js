@@ -1,3 +1,12 @@
+/*
+ * TO DO
+ * Cuando se tenga tiempo:
+ * * Ordenar código
+ * * id nuevo para fecha, tipo y estado
+ * * setear valores vacios en tipo y estado
+ * * setear fecha en fecha
+ */
+
 function newReport() {
     const reportsDiv = document.getElementById('reports')
     const reports = document.getElementsByClassName('report')
@@ -6,7 +15,6 @@ function newReport() {
     newReport.children[0].children[0].innerHTML = `Información de avistamiento n°${reports.length+1}`;
 
     const fileInputList = newReport.children[4].children[1];
-
     fileInputList.id = `file-input-list-${reports.length}`;
     fileInputList.children[0].children[0].children[0].innerHTML = 'Subir foto';
     fileInputList.children[0].children[0].children[1].value = '';
