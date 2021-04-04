@@ -143,15 +143,33 @@
                     </div>
                 </div>  
             </div>
-            <div class="form-button">
+
+            <div class="form-button" id="opened-form-buttons">
                 <button type="button" class="white-button" onclick="newReport()"><b>Informar otro avistamiento en este sector</b></button>
-                <button type="submit"><b>Enviar formulario de avistamiento</b></button>
+                <button type="button" onclick="openConfirmation()"><b>Enviar información de avistamiento</b></button>
             </div>
+
+            <div id="closed-confirmation-div">
+                <h3>¿Está seguro que desea envíar esta información?</h3>
+                <div class="form-button">
+                    <button type="button" onclick="confirmate()" ><b>Sí, estoy total y absolutamente seguro</b></button>
+                    <button type="button" class="white-button" onclick="backToForm()"><b>No estoy seguro</b></button>
+                </div>
+            </div>
+
+            <div id="closed-sent">
+                <h3>¡Hemos recibido su información, muchas gracias por colaborar!</h3>
+                <div class="form-button">
+                    <button type="button"><a href="../index.html"><b>Volver a la portada</b></a></button>
+                </div>
+            </div>
+
         </form>
     </div>
     <script src="../assets/js/form_region_comuna_select.js"></script>
     <script src="../assets/js/form_validators.js"></script>
     <script src="../assets/js/form_file_input.js"></script>
     <script src="../assets/js/form_new_report.js"></script>
+    <script src="../assets/js/form_steps.js"></script>
 </body>
 </html>

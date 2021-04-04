@@ -11,6 +11,10 @@
     padding: 10px 0px;
 }
 
+.card .hidden-form-section {
+    display: none !important;
+}
+
 .form-section p {
     margin: 5px 0px;
 
@@ -58,6 +62,12 @@
     width: 50%;
     border-radius: 32px;
     border: 1px solid rgba(44,82,47,1);
+}
+
+button a, .white-button a {
+    color: inherit;
+    letter-spacing: inherit;
+    text-decoration: none;
 }
 
 input[type="file"] {
@@ -117,4 +127,29 @@ input[type="file"] {
     .form-button button, .form-button .white-button {
         width: 80%;
     }
+}
+
+
+#closed-form-buttons {
+    display: none;
+}
+
+#opened-form-buttons {
+    display: block;
+}
+
+#closed-confirmation-div {
+    display: none;
+}
+
+#opened-confirmation-div {
+    display: block;
+}
+
+#closed-sent {
+    display: none;
+}
+
+#opened-sent {
+    display: block;
 }

@@ -123,34 +123,35 @@ function validateForm() {
     validateSector();
     validateName();
 
+    let msg = ''
+
     if (validateEmpty('region')) {
-        alert('Rellena región');
-        return false;
+        msg = 'Rellena región';
     } else if (validateEmpty('comuna')) {
-        alert('Rellena comuna');
-        return false;
+        msg ='Rellena comuna';
     } else if (validateEmpty('nombre')) {
-        alert('Rellena nombre');
-        return false
+        msg ='Rellena nombre';
     } else if (!validateMail()){
-        alert('Mail mal formateado o vacío');
-        return false;
+        msg ='Mail mal formateado o vacío';
     } else if  (!validatePhone() && !validateEmpty('celular')) {
-        alert('Celular mal escrito');
-        return false;
+        msg ='Celular mal escrito';
     } else if (!validateDate()) {
-        alert('Fecha/hora mal formateada');
-        return false;
+        msg = 'Fecha/hora mal formateada';
     } else if (!validateType('tipo-avistamiento')) {
-        alert('Rellena tipo');
-        return false;
+        msg = 'Rellena tipo';
     } else if (!validateStatus('estado-avistamiento')) {
-        alert('Rellena estado');
-        return false;
+        msg ='Rellena estado';
     } else if (!validateFiles()) {
-        alert('Debes subir entre 1 y 5 imágenes por avistamiento')
-        return false
+        msg = 'Debes subir entre 1 y 5 ¡imágenes! por avistamiento';
     }
+
+    if (msg != ''){
+        alert(msg);
+        return false;
+    } else {
+        return true;
+    }
+
 }
 
 /* **** MAIN **** */
