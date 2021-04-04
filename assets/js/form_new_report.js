@@ -4,7 +4,6 @@
  * * Ordenar código
  * * id nuevo para fecha, tipo y estado
  * * setear valores vacios en tipo y estado
- * * setear fecha en fecha
  */
 
 function newReport() {
@@ -13,6 +12,8 @@ function newReport() {
     const newReport = reports[reports.length-1].cloneNode(true);
     newReport.setAttribute("id", `report-${reports.length}`);
     newReport.children[0].children[0].innerHTML = `Información de avistamiento n°${reports.length+1}`;
+
+    newReport.children[1].children[1].children[0].value = getDatetime();
 
     const fileInputList = newReport.children[4].children[1];
     fileInputList.id = `file-input-list-${reports.length}`;
