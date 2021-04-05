@@ -1,6 +1,13 @@
+.card-table {
+    overflow-x: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
 .reports-table {
     margin: auto;
     border-radius: 10px;
+    width: 100%;
     text-align: center;
 }
 
@@ -26,7 +33,6 @@
 .reports-table th:last-child {
     border-top-right-radius: 10px;
 }
-
 
 .reports-table td {
     padding: 15px;
@@ -58,16 +64,15 @@
 
 @media screen and (max-width: 767px) {
     .reports-table {
-        width: 100%;
         letter-spacing: -1px;
     }
 
     .reports-table th {
-        padding: 15px 1px;
+        padding: 15px 5px;
     }
 
     .reports-table td {
-        padding: 15px 1px;
+        padding: 15px 5px;
     }
 }
 
