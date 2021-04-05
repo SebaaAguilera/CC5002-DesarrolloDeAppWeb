@@ -5,7 +5,7 @@ const parseHTML = (tableBody, data) => {
     let html = "";
     data.forEach(element => {
         const tr = document.createElement('tr');
-        tr.className = 'teble-row';
+        tr.className = 'table-row';
         tr.onclick = () => {
             location.href = './sampleReport.html';
         }

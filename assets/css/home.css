@@ -37,7 +37,6 @@
 
 @media (max-width: 575px) {
     .home-report {
-        padding: auto;
         text-align: center;
         height: 270px;
         display: block;
