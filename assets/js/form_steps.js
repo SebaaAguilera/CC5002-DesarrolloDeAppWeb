@@ -25,4 +25,4 @@ function backToForm() {
     sectionList[0].className = 'form-section';
     document.getElementById('closed-form-buttons').id = 'opened-form-buttons';
 
-}
+}     
