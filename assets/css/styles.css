@@ -141,3 +141,28 @@ nav li a.redirect:hover {
         margin-top: 0;
     }
 }
+
+/* **** BUTTONS **** */
+
+.btn{
+    background-color: rgba(44,82,47,1);
+    color: white;
+    padding: 5px;
+    letter-spacing: -1px;
+    border-radius: 32px;
+    border: 0px solid #ccc;
+}
+
+.btn-white{
+    color: rgba(44,82,47,1);
+    background-color: white;
+    padding: 5px;
+    border-radius: 32px;
+    border: 1px solid rgba(44,82,47,1);
+}
+
+.btn a, .btn-white {
+    color: inherit;
+    letter-spacing: inherit;
+    text-decoration: none;
+}

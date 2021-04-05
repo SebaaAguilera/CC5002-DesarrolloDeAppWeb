@@ -1,5 +1,3 @@
-// Images taken from https://www.insectimages.org/index.cfm
-
 const parseHTML = (tableBody, data) => {
 
     let html = "";

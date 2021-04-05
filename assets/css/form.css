@@ -44,30 +44,10 @@
 }
 
 .form-button button {
-    background-color: rgba(44,82,47,1) ;
-    color: white;
-    padding: 5px;
     margin: 2px 0px;
     width: 50%;
-    letter-spacing: -1px;
-    border-radius: 32px;
-    border: 0px solid #ccc;
 }
 
-.form-button .white-button{
-    color: rgba(44,82,47,1);
-    background-color: white;
-    padding: 5px;
-    width: 50%;
-    border-radius: 32px;
-    border: 1px solid rgba(44,82,47,1);
-}
-
-button a, .white-button a {
-    color: inherit;
-    letter-spacing: inherit;
-    text-decoration: none;
-}
 
 input[type="file"] {
     display: none;
@@ -112,7 +92,7 @@ input[type="file"] {
         width: 40%;
     }
 
-    .form-button button, .form-button .white-button {
+    .form-button .btn, .form-button .btn-white {
         width: 60%;
     }
 }
@@ -122,7 +102,7 @@ input[type="file"] {
         width: 100%;
     }    
 
-    .form-button button, .form-button .white-button {
+    .form-button .btn, .form-button .button.white {
         width: 80%;
     }
 }
