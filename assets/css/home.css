@@ -25,8 +25,8 @@
     border-radius: 50%;
 }
 .home-report .image img{
-    width: auto;
-    height: 100%;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
 }
 

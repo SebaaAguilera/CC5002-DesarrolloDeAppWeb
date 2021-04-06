@@ -36,6 +36,16 @@ fetch('./assets/json/dummy.json').then(response => {
 
     const dummy = [
         {
+            "fecha": "2021-04-28 10:03",
+            "comuna": "Renca",
+            "sector": "Cerro",
+            "tipo": "insecto",
+            "img": {
+                "src":"https://bugwoodcloud.org/images/384x256/9009060.jpg",
+                "alt":"larva"
+            }
+         },
+        {
            "fecha": "2021-03-29 13:21",
            "comuna": "La Florida",
            "sector": "Vicuña Mackena",
@@ -46,13 +56,33 @@ fetch('./assets/json/dummy.json').then(response => {
            }
         },
         {
-            "fecha": "2021-03-27 10:03",
+            "fecha": "2021-03-27 10:30",
             "comuna": "Providencia",
             "sector": "Plaza Italia",
             "tipo": "arácnido",
             "img": {
                 "src":"https://bugwoodcloud.org/images/384x256/5506414.jpg",
                 "alt":"tarantula"
+            }
+         },
+         {
+            "fecha": "2021-03-25 12:50",
+            "comuna": "Providencia",
+            "sector": "Parque de la aviación",
+            "tipo": "insecto",
+            "img": {
+                "src":"https://bugwoodcloud.org/images/384x256/5604040.jpg",
+                "alt":"mantis"
+            }
+         },
+         {
+            "fecha": "2021-03-25 12:50",
+            "comuna": "Providencia",
+            "sector": "Parque de las esculturas",
+            "tipo": "miriápodo",
+            "img": {
+                "src":"https://bugwoodcloud.org/images/384x256/5473412.jpg",
+                "alt":"cienpiés"
             }
          }
     ];
