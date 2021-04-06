@@ -43,7 +43,7 @@
     text-align: center;
 }
 
-.form-button button {
+.form-button .btn {
     margin: 2px 0px;
     width: 50%;
 }

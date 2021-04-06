@@ -7,6 +7,7 @@
     <title>Avistamientos</title>
     <link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/reportPage.css">
 </head>
 <body>
     <nav>
@@ -19,6 +20,34 @@
     </nav>
     <div class="card">
         <h3>Sample</h3>
+        <div class="report">
+            <div class="row">
+                <div class="col-25">
+                    <ul>
+                        <li><b>Fecha hora: </b> </li>
+                        <li><b>Región: </b>     </li>
+                        <li><b>Comuna: </b>     </li>
+                        <li><b>Sector: </b></li>
+                        <li><b>Nombre contacto: </b></li>
+                        <li><b>Email: </b></li>
+                        <li><b>N° de celular: </b></li>
+                        <li><b>Tipo: </b></li>
+                        <li><b>Estado: </b></li>
+                    </ul>
+                </div>
+                <div class="col-75 image-list">
+                    <div class="report-div-img"><img onclick="openInModal(this)" class="report-img" src="https://bugwoodcloud.org/images/384x256/5506414.jpg" alt="tarantula"></div>
+                    <div class="report-div-img"><img onclick="openInModal(this)" class="report-img" src="https://bugwoodcloud.org/images/384x256/5506414.jpg" alt="tarantula"></div>
+                    <div class="report-div-img"><img onclick="openInModal(this)" class="report-img" src="https://bugwoodcloud.org/images/384x256/5506414.jpg" alt="tarantula"></div>
+                </div>
+            </div>
+        </div>
+        <div class="report-buttons">
+            <button type="button" class="btn"><a href="./reports.html"><b>Volver al listado</b></a></button>
+            <button type="button" class="btn btn-white"><a href="../index.html"><b>Volver a la portada</b></a></button>
+        </div>
     </div>
+    <script src="../assets/js/modal_img.js"></script>
+
 </body>
 </html>
