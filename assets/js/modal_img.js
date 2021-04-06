@@ -5,7 +5,6 @@ function openInModal(img) {
     const div = document.createElement('div');
     div.className = 'modal';
     div.id = 'modal'
-    div.style.display = "block";
     const span = document.createElement('span');
     span.innerHTML = '&times;';
     span.className = 'close'
