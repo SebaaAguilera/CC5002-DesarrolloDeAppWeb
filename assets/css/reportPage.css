@@ -1,4 +1,11 @@
 
+.report-data {
+    padding-left: 8vw;
+}
+
+.report-data li {
+    margin: 5px 0px;
+}
 
 .image-list {
     text-align: center;
@@ -31,6 +38,21 @@
     margin: 2px auto;
 }
 
+@media (max-width: 991px) {
+    .report-data {
+        padding-left: 2vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .report-data ul{
+        padding-left: 1vw;
+        width: 60%;
+        margin: auto;
+    }
+
+
+}
 
 /* **** MODAL **** */
   

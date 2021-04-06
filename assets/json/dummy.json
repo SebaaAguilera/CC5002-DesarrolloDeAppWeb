@@ -10,7 +10,7 @@
                 "src":"https://bugwoodcloud.org/images/384x256/9009060.jpg",
                 "alt":"larva"
             }
-         },
+        },
         {
            "fecha": "2021-03-29 13:21",
            "comuna": "La Florida",
@@ -30,8 +30,8 @@
                 "src":"https://bugwoodcloud.org/images/384x256/5506414.jpg",
                 "alt":"tarantula"
             }
-         },
-         {
+        },
+        {
             "fecha": "2021-03-25 12:50",
             "comuna": "Providencia",
             "sector": "Parque de la aviación",
@@ -40,8 +40,8 @@
                 "src":"https://bugwoodcloud.org/images/384x256/5604040.jpg",
                 "alt":"mantis"
             }
-         },
-         {
+        },
+        {
             "fecha": "2021-03-25 12:50",
             "comuna": "Providencia",
             "sector": "Parque de las esculturas",
@@ -50,7 +50,7 @@
                 "src":"https://bugwoodcloud.org/images/384x256/5473412.jpg",
                 "alt":"cienpiés"
             }
-         }
+        }
     ]
 }
 

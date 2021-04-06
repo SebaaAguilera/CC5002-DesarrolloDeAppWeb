@@ -1,28 +1,44 @@
-{
+ {
     "reports": [
         {
-            "fecha": "2021-03-29 13:21",
+            "fecha": "2020-05-21 13:21",
             "comuna": "La Florida",
             "sector": "Vicuña Mackena",
-            "contacto": "Jorge el curioso",
+            "contacto": "Francisco Yamilet",
+            "total_avistamientos": 2,
+            "total_fotos": 5
+        },
+        {
+            "fecha": "2020-05-27 16:03",
+            "comuna": "Providencia",
+            "sector": "Plaza Italia",
+            "contacto": "Coral Ayala",
+            "total_avistamientos": 3,
+            "total_fotos": 3
+        },
+        {
+            "fecha": "2020-06-27 10:53",
+            "comuna": "Renca",
+            "sector": "Cerro",
+            "contacto": "Anastasia Rayen",
+            "total_avistamientos": 1,
+            "total_fotos": 5
+        },
+        {
+            "fecha": "2020-07-30 15:23",
+            "comuna": "Providencia",
+            "sector": "Parque de la aviación",
+            "contacto": "Eva Toribio",
+            "total_avistamientos": 2,
+            "total_fotos": 3
+        },
+        {
+            "fecha": "2021-02-28 22:04",
+            "comuna": "Providencia",
+            "sector": "Parque de las esculturas",
+            "contacto": "Paz Odalis",
             "total_avistamientos": 5,
             "total_fotos": 5
-         },
-         {
-             "fecha": "2021-03-27 10:03",
-             "comuna": "Providencia",
-             "sector": "Plaza Italia",
-             "contacto": "Jorge el curioso",
-             "total_avistamientos": 5,
-             "total_fotos": 5
-          },
-          {
-              "fecha": "2021-03-27 10:03",
-              "comuna": "Providencia",
-              "sector": "Plaza Italia",
-              "contacto": "Jorge el curioso",
-              "total_avistamientos": 5,
-              "total_fotos": 5
-           }
+        }
     ]
 }
