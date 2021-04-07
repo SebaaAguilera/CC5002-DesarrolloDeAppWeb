@@ -27,7 +27,7 @@
                 <p><b>Lugar:</b></p>
                 <div class="row">
                     <div class="col-25">
-                        <label>Región:</label>
+                        <p>Región:</p>
                     </div>
                     <div class="col-75">
                         <select name="region" required onchange="updateCommunes()">
@@ -37,7 +37,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label>Comuna:</label>
+                        <p>Comuna:</p>
                     </div>
                     <div class="col-75">
                         <select name="comuna" required>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label>Sector:</label>
+                        <p>Sector:</p>
                     </div>
                     <div class="col-75">
                         <input type="text" name="sector" size="200" maxlength="100"
@@ -60,7 +60,7 @@
                 <p><b>Datos de contacto:</b></p>
                 <div class="row">
                     <div class="col-25">
-                        <label">Nombre:</label>
+                        <p>Nombre:</p>
                     </div>
                     <div class="col-75">
                         <input type="text" name="nombre" placeholder="Juan Perez" 
@@ -70,7 +70,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label>Email:</label>
+                        <p>Email:</p>
                     </div>
                     <div class="col-75">
                         <input type="email" name="email" placeholder="example@mail.cl"
@@ -79,7 +79,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label>N° de celular</label>
+                        <p>N° de celular</p>
                     </div>
                     <div class="col-75">
                         <input type="text" name="celular" size="15" placeholder="+56964669029"
@@ -93,7 +93,7 @@
                     <p><b>Información de avistamiento n°1:</b></p>
                     <div class="row">
                         <div class="col-25">
-                            <label>Día hora:</label>
+                            <p>Día hora:</p>
                         </div>
                         <div class="col-75">
                             <input type="text" name="dia-hora-avistamiento"
@@ -102,7 +102,7 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label>Tipo</label>
+                            <p>Tipo</p>
                         </div>
                         <div class="col-75">
                             <select name="tipo-avistamiento" >
@@ -116,7 +116,7 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label>Estado</label>
+                            <p>Estado</p>
                         </div>
                         <div class="col-75">
                             <select name="estado-avistamiento" required>
@@ -129,13 +129,13 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label>Foto:</label>
+                            <p>Foto:</p>
                         </div>
                         <div class="col-75" id="file-input-list-0">
                             <div class="file-input-div">
                                 <label class="file-upload">
-                                    <p class="file-input-text">Subir foto</p>
-                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" value="" accept="image/*"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              onchange="showFiles(this.id)">
+                                    <span class="file-input-text">Subir foto</span>
+                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" accept="image/*"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              onchange="showFiles(this.id)">
                                 </label>
                                 <button type="button" class="new-file" id="button-avistamiento-0" onclick="addFileInput(this.id)">Agregar otra foto</button>
                             </div>
@@ -152,7 +152,7 @@
             <div id="closed-confirmation-div">
                 <h3>¿Está seguro que desea envíar esta información?</h3>
                 <div class="form-button">
-                    <button type="button" class="btn"onclick="confirmate()" ><b>Sí, estoy total y absolutamente seguro</b></button>
+                    <button type="button" class="btn" onclick="confirmate()" ><b>Sí, estoy total y absolutamente seguro</b></button>
                     <button type="button" class="btn btn-white" onclick="backToForm()"><b>No estoy seguro, volver al formulario</b></button>
                 </div>
             </div>
@@ -160,7 +160,7 @@
             <div id="closed-sent">
                 <h3>¡Hemos recibido su información, muchas gracias por colaborar!</h3>
                 <div class="form-button">
-                    <button type="button" class="btn"><a href="../index.html"><b>Volver a la portada</b></a></button>
+                    <div class="btn"><a href="../index.html"><b>Volver a la portada</b></a></div>
                 </div>
             </div>
 

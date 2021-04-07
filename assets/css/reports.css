@@ -9,6 +9,7 @@
     border-radius: 10px;
     width: 100%;
     text-align: center;
+    border-collapse: collapse;
 }
 
 .reports-table thead {
@@ -50,8 +51,11 @@
     background-color: #e0e0e0;
 }
 
+
 .reports-table tr:last-child > td {
     border-bottom: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
 .reports-table .table-row:last-child td:first-child{

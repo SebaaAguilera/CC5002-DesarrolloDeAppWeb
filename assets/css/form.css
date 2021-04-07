@@ -31,9 +31,6 @@
     resize: vertical;
 }
 
-.form-section label {
-    display: inline-block;
-}
 
 .form-section .report {
     margin-bottom: 20px;

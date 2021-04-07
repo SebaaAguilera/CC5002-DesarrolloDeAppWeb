@@ -10,7 +10,7 @@ const datetimeRegex = /^([0-9]{4})-([0-1][0-9])-([0-3][0-9])\s([0-1][0-9]|[2][0-
 
 function validateEmpty(id) {
     const node = document.forms['formReport'][id];
-    return node.value == '';
+    return node.value == '' || node.value == null || node.value == undefined;
 }
 
 function validateLength(name,length) {
