@@ -35,7 +35,12 @@ function validateMail() {
     const node = document.forms['formReport']['email'];
     node.value = node.value.replace(/\s/g, '');
     const isValid = mailRegex.test(node.value);
-    console.log('Mail validation: ',isValid);
+    console.debug('Mail validation: ',isValid);
+    if (!isValid) {
+        node.setCustomValidity('mal')
+    } else {
+        node.setCustomValidity('')
+    }
     return isValid;
 }
 
@@ -43,7 +48,12 @@ function validatePhone() {
     const node = document.forms['formReport']['celular'];
     node.value = node.value.replace(/\s/g, '');
     const isValid = phoneRegex.test(node.value);
-    console.log('Phone validation: ', isValid);
+    console.debug('Phone validation: ', isValid);
+    if (!isValid) {
+        node.setCustomValidity('mal')
+    } else {
+        node.setCustomValidity('')
+    }
     return isValid;
 }
 
@@ -66,7 +76,12 @@ function validateDate() {
     nodes.forEach(element => {
         element.value = element.value.substring(0,16);
         isValid = datetimeRegex.test(element.value);
-        console.log('Datetime validation: ', isValid);
+        console.debug('Datetime validation: ', isValid);
+        if (!isValid) {
+            element.setCustomValidity('mal')
+        } else {
+            element.setCustomValidity('')
+        }
     });
     return isValid;
 }

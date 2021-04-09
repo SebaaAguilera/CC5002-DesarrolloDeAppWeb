@@ -20,16 +20,15 @@ const parseHTML = (tableBody, data) => {
 /* **** MAIN **** */
 
 fetch('../assets/json/reports.json').then(response => {
-    console.log(response);
+    console.debug('DUMMY RESPONSE', response);
     return response.json();
 }).then(data => {
     const dummy = data.reports;
-    console.log('DUMMY', dummy);
+    console.debug('DUMMY', dummy);
 
     let tableBody = document.getElementById('table-body');
     parseHTML(tableBody,dummy);
 }).catch(e => {
-    console.log('Si se abre el index.html a secas en el navegador no funciona el fetch :c')
     console.error(e)
 
     const dummy = [

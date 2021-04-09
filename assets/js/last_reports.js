@@ -22,18 +22,16 @@ const parseHTML = (data) => {
 /* **** MAIN **** */
 
 fetch('./assets/json/dummy.json').then(response => {
-    console.log(response);
+    console.debug('DUMMY RESPONSE', response);
     return response.json();
 }).then(data => {
     const dummy = data.avistamientos.slice(0,5);
-    console.log('DUMMY', dummy);
+    console.debug('DUMMY', dummy);
 
     let lastReports = document.getElementById('lastReports');
     lastReports.innerHTML = parseHTML(dummy);
 }).catch(e => {
-    console.log('Si se abre el index.html a secas en el navegador no funciona el fetch :c')
     console.error(e)
-
     const dummy = [
         {
             "fecha": "2021-04-28 10:03",

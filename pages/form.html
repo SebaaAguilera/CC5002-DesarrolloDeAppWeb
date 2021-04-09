@@ -20,9 +20,8 @@
     </nav>
     <div class="card">
         <h3>Formulario para registro de avistamientos</h3>
-
         <form action="#" method="POST" name="formReport" onsubmit="return validateForm()">
-
+            <!-- LUGAR -->
             <div class="form-section">
                 <p><b>Lugar:</b></p>
                 <div class="row">
@@ -54,8 +53,9 @@
                         onkeyup="validateSector()">
                     </div>
                 </div>
-            </div>
+            </div> <!-- LUGAR -->
 
+            <!-- CONTACTO -->
             <div class="form-section">
                 <p><b>Datos de contacto:</b></p>
                 <div class="row">
@@ -86,8 +86,9 @@
                         onkeyup="validatePhone()">      
                     </div>
                 </div>
-            </div>
+            </div> <!-- CONTACTO -->
 
+            <!-- INFO AVISTAMIENTO -->
             <div class="form-section" id="reports">
                 <div class="report" id="report-0">
                     <p><b>Información de avistamiento n°1:</b></p>
@@ -142,7 +143,7 @@
                         </div>
                     </div>
                 </div>  
-            </div>
+            </div> <!-- INFO AVISTAMIENTO -->
 
             <div class="form-button" id="opened-form-buttons">
                 <button type="button" class="btn btn-white" onclick="newReport()"><b>Informar otro avistamiento en este sector</b></button>

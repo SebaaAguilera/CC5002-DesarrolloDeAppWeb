@@ -26,10 +26,12 @@ function updateCommunes() {
 let regions;
 
 fetch('../assets/json/regions.json').then(response => {
+    console.debug('REGIONES RESPONSE', response);
     return response.json();
 }).then(data => {
     // global: regions
     regions = data.regions;
+    console.debug('REGIONES', regions); 
     addOptions(regions,'region');
 
     const regionValue = document.forms['formReport']['region'].value;
