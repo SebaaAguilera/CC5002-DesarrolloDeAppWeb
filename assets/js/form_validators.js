@@ -36,11 +36,7 @@ function validateMail() {
     node.value = node.value.replace(/\s/g, '');
     const isValid = mailRegex.test(node.value);
     console.debug('Mail validation: ',isValid);
-    if (!isValid) {
-        node.setCustomValidity('mal')
-    } else {
-        node.setCustomValidity('')
-    }
+    node.setCustomValidity(isValid ? '' : 'Mail mal escrito')
     return isValid;
 }
 
@@ -49,11 +45,7 @@ function validatePhone() {
     node.value = node.value.replace(/\s/g, '');
     const isValid = phoneRegex.test(node.value);
     console.debug('Phone validation: ', isValid);
-    if (!isValid) {
-        node.setCustomValidity('mal')
-    } else {
-        node.setCustomValidity('')
-    }
+    node.setCustomValidity(isValid ? '' : 'Teléfono mal escrito')
     return isValid;
 }
 
@@ -77,11 +69,7 @@ function validateDate() {
         element.value = element.value.substring(0,16);
         isValid = datetimeRegex.test(element.value);
         console.debug('Datetime validation: ', isValid);
-        if (!isValid) {
-            element.setCustomValidity('mal')
-        } else {
-            element.setCustomValidity('')
-        }
+        element.setCustomValidity(isValid ? '' : 'Fecha mal escrita')
     });
     return isValid;
 }
@@ -137,7 +125,7 @@ function validateForm() {
     validateSector();
     validateName();
 
-    let msg = ''
+    let msg = '';
 
     if (validateEmpty('region')) {
         msg = 'Rellena región';

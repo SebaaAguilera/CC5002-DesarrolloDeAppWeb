@@ -38,4 +38,43 @@ fetch('../assets/json/regions.json').then(response => {
     if (regionValue != '') {
         updateCommunes();
     }
-})
+
+    document.forms['formReport']['region'].onchange = function(){updateCommunes()};
+}).catch(e => {
+    console.error(e)
+    regions = [
+        {
+            "name": "Arica y Parinacota",
+            "romanNumber": "XV",
+            "number": "15",
+            "communes": [
+                {"name": "Arica"},
+                {"name": "Camarones"},
+                {"name": "General Lagos"},
+                {"name": "Putre"}
+            ]
+        },
+        {
+            "name": "Tarapacá",
+            "romanNumber": "I",
+            "number": "1",
+            "communes": [
+                {"name": "Alto Hospicio"},
+                {"name": "Camiña"},
+                {"name": "Colchane"},
+                {"name": "Huara"},
+                {"name": "Iquique"},
+                {"name": "Pica"},
+                {"name": "Pozo Almonte"}
+            ]
+        }
+    ];
+    console.debug('REGIONES', regions); 
+    addOptions(regions,'region');
+
+    const regionValue = document.forms['formReport']['region'].value;
+    if (regionValue != '') {
+        updateCommunes();
+    }
+    document.forms['formReport']['region'].onchange = function(){updateCommunes()};
+});
