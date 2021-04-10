@@ -40,8 +40,8 @@
     text-align: center;
 }
 
-.form-button .btn {
-    margin: 2px 0px;
+.form-button .btn  {
+    margin: 2px auto;
     width: 50%;
 }
 
