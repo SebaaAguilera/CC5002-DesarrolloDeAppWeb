@@ -3,7 +3,7 @@
 import mysql.connector
 import os
 
-class Report:
+class ReportDB:
     def __init__(self):
         self.db = mysql.connector.connect(
             host = 'localhost',
@@ -42,7 +42,7 @@ class Report:
         for report in data.reports:
             reportId = self.save_report((
                 data.comuna_id,
-                report.dia_hora
+                report.dia_hora,
                 data.sector,
                 data.nombre,
                 data.email,
@@ -71,7 +71,7 @@ class Report:
         return self.cursor.getlastrowid()
 
     def save_report_detail(self, data):
-         sql = '''
+        sql = '''
             INSERT INTO detalle_avistamiento (dia_hora, tipo, estado, avistamiento_id) 
             VALUES (%s, %s, %s, %s, %s);
         '''
@@ -103,3 +103,12 @@ class Report:
     def get_photos(self,report_detail_id):
         self.cursor.execute('SELECT id, ruta_archivo, nombre_archivo, detalle_avistamiento_id FROM foto WHERE detalle_avistamiento_id=%s', report_detail_id)
         return self.cursor.fetchall()
+
+    def get_regiones(self):
+        self.cursor.execute('SELECT region.id, nombre FROM region ORDER BY nombre ASC')
+        return self.cursor.fetchall()
+
+    def get_comunas(self, regions_id):
+        self.cursor.execute(f'SELECT id, nombre FROM comuna WHERE region_id={regions_id} ORDER BY nombre ASC;')
+        return self.cursor.fetchall()
+

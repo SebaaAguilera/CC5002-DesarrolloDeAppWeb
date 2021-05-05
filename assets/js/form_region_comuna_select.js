@@ -25,13 +25,13 @@ function updateCommunes() {
 
 let regions;
 
-fetch('../assets/json/regions.json').then(response => {
-    console.debug('REGIONES RESPONSE', response);
-    return response.json();
+fetch('../cgi-bin/regiones-comunas.py').then(response => {
+    console.debug('CGI RESPONSE', response)
+    return response.json()
 }).then(data => {
-    // global: regions
-    regions = data.regions;
-    console.debug('REGIONES', regions); 
+    
+    regions = data.Result;
+    console.debug('REGIONES + COMUNAS', regions)
     addOptions(regions,'region');
 
     const regionValue = document.forms['formReport']['region'].value;
@@ -45,7 +45,6 @@ fetch('../assets/json/regions.json').then(response => {
     regions = [
         {
             "name": "Arica y Parinacota",
-            "romanNumber": "XV",
             "number": "15",
             "communes": [
                 {"name": "Arica"},
@@ -56,7 +55,6 @@ fetch('../assets/json/regions.json').then(response => {
         },
         {
             "name": "Tarapacá",
-            "romanNumber": "I",
             "number": "1",
             "communes": [
                 {"name": "Alto Hospicio"},
