@@ -1,6 +1,12 @@
 # CC5002-DesarrolloDeAppWeb
 Repositorio del curso CC5002: Desarrollo de Aplicaciones Web
 
-Sitio de deploy: [anakena/~siaguile](https://anakena.dcc.uchile.cl/~siaguile/Tarea1/index.html)
+Modelo de datos
+![Modelo de datos](./enunciado/tarea2.png)
 
-Tambien se puede ejecutar localmente con el plugin Live Server de Visual Studio Code.
+Sitio de deploy: [anakena/~siaguile](https://anakena.dcc.uchile.cl/~siaguile/Tarea2/index.html)
+
+Tambien se puede desplegar localmente ejecutando 
+```
+python3 -m htt.server --bind localhost --cgi <port> 
+```
