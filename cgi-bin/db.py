@@ -18,6 +18,7 @@ class Report:
     def save_data(self, data):
         """D
         Data should be formatted like: {
+            ruta_media
             comuna_id,
             sector,
             nombre,
@@ -29,7 +30,7 @@ class Report:
                     tipo,
                     estado
                     fotos: [
-                        (path, filename),
+                        filename1,
                         ...
                     ]
                 },
@@ -55,8 +56,8 @@ class Report:
             ))
             for foto in report.fotos:
                 self.save_photo((
-                    foto.path,
-                    foto.filename,
+                    data.ruta_media,
+                    foto,
                     reportDetailId
                 ))
 
