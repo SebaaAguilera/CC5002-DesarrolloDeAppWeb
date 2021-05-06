@@ -25,7 +25,7 @@ function updateCommunes() {
 
 let regions;
 
-fetch('../cgi-bin/regiones-comunas.py').then(response => {
+fetch('../cgi-bin/regiones_comunas.py').then(response => {
     console.debug('CGI RESPONSE', response)
     return response.json()
 }).then(data => {

@@ -13,12 +13,17 @@ function newReport() {
     newReport.setAttribute("id", `report-${reports.length}`);
     newReport.children[0].children[0].innerHTML = `Información de avistamiento n°${reports.length+1}`;
 
+    newReport.children[1].children[1].children[0].name = `dia-hora-avistamiento-${reports.length}`;
     newReport.children[1].children[1].children[0].value = getDatetime();
+
+    newReport.children[2].children[1].children[0].name = `tipo-avistamiento-${reports.length}`;
+    newReport.children[3].children[1].children[0].name = `estado-avistamiento-${reports.length}`;
 
     const fileInputList = newReport.children[4].children[1];
     fileInputList.id = `file-input-list-${reports.length}`;
     fileInputList.children[0].children[0].children[0].innerHTML = 'Subir foto';
     fileInputList.children[0].children[0].children[1].value = '';
+    fileInputList.children[0].children[0].children[1].name = `foto-avistamiento-${reports.length}`;
     fileInputList.children[0].children[0].children[1].id = `foto-avistamiento-${reports.length}-0`;
     fileInputList.children[0].children[1].id = `button-avistamiento-${reports.length}`;
 

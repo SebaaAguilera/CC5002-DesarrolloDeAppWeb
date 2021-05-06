@@ -13,8 +13,10 @@ function openConfirmation() {
 }
 
 function confirmate() {
-    document.getElementById('opened-confirmation-div').id = 'closed-confirmation-div';
-    document.getElementById('closed-sent').id = 'opened-sent';
+    // document.getElementById('opened-confirmation-div').id = 'closed-confirmation-div';
+    // document.getElementById('closed-sent').id = 'opened-sent';
+    backToForm()
+    document.getElementById("formReport").submit(); 
 }
 
 function backToForm() {

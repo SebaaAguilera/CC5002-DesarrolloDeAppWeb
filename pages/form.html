@@ -20,7 +20,7 @@
     </nav>
     <div class="card">
         <h3>Formulario para registro de avistamientos</h3>
-        <form action="#" method="POST" name="formReport" onsubmit="return validateForm()">
+        <form action="../cgi-bin/save_report.py" enctype="multipart/form-data" method="POST" name="formReport" id="formReport" onsubmit="return validateForm()">
             <!-- LUGAR -->
             <div class="form-section">
                 <p><b>Lugar:</b></p>
@@ -97,8 +97,8 @@
                             <p>Día hora:</p>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="dia-hora-avistamiento"
-                            onkeyup="validateDate(0)">
+                            <input type="text" name="dia-hora-avistamiento-0" class="dia-hora-avistamiento"
+                            onkeyup="validateDate(0)" required>
                         </div>
                     </div>
                     <div class="row">
@@ -106,7 +106,7 @@
                             <p>Tipo</p>
                         </div>
                         <div class="col-75">
-                            <select name="tipo-avistamiento" >
+                            <select name="tipo-avistamiento-0" class="tipo-avistamiento" required>
                                 <option value="" disabled selected >Selecciona un tipo</option>
                                 <option value="unknown">No sé</option>
                                 <option value="insecto">Insecto</option>
@@ -120,7 +120,7 @@
                             <p>Estado</p>
                         </div>
                         <div class="col-75">
-                            <select name="estado-avistamiento" required>
+                            <select name="estado-avistamiento-0" class="estado-avistamiento" required>
                                 <option value="" disabled selected>Selecciona un estado</option>
                                 <option value="unknown">No sé</option>
                                 <option value="vivo">Vivo</option>
@@ -136,7 +136,7 @@
                             <div class="file-input-div">
                                 <label class="file-upload">
                                     <span class="file-input-text">Subir foto</span>
-                                    <input type="file" name="foto-avistamiento" id="foto-avistamiento-0-0" accept="image/*"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              onchange="showFiles(this.id)">
+                                    <input type="file" name="foto-avistamiento-0" id="foto-avistamiento-0-0" accept="image/*"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              onchange="showFiles(this.id)">
                                 </label>
                                 <button type="button" class="new-file" id="button-avistamiento-0" onclick="addFileInput(this.id)">Agregar otra foto</button>
                             </div>
@@ -153,7 +153,7 @@
             <div id="closed-confirmation-div">
                 <h3>¿Está seguro que desea envíar esta información?</h3>
                 <div class="form-button">
-                    <button type="button" class="btn" onclick="confirmate()" ><b>Sí, estoy total y absolutamente seguro</b></button>
+                    <button type="button" class="btn" onclick="confirmate()"><b>Sí, estoy total y absolutamente seguro</b></button>
                     <button type="button" class="btn btn-white" onclick="backToForm()"><b>No estoy seguro, volver al formulario</b></button>
                 </div>
             </div>

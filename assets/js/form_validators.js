@@ -63,36 +63,36 @@ function getDatetime() {
 
 
 function validateDate() {
-    const nodes = document.getElementsByName('dia-hora-avistamiento');
+    const nodes = document.getElementsByClassName('dia-hora-avistamiento');
     let isValid = true;
-    nodes.forEach(element => {
+    for (let element of nodes) {
         element.value = element.value.substring(0,16);
         isValid = datetimeRegex.test(element.value);
         console.debug('Datetime validation: ', isValid);
         element.setCustomValidity(isValid ? '' : 'Fecha mal escrita')
-    });
+    }
     return isValid;
 }
 
 function validateType () {
-    const nodes = document.getElementsByName('tipo-avistamiento');
+    const nodes = document.getElementsByClassName('tipo-avistamiento');
     let isValid = true;
-    nodes.forEach(element => {
+    for (let element of nodes) {
         if (element.value == ''){
             isValid = false;
         }
-    }); 
+    }
     return isValid;
 }
 
 function validateStatus() {
-    const nodes = document.getElementsByName('estado-avistamiento');
+    const nodes = document.getElementsByClassName('estado-avistamiento');
     let isValid = true;
-    nodes.forEach(element => {
+    for (let element of nodes) {
         if (element.value == ''){
             isValid = false;
         }
-    }); 
+    }
     return isValid;
 }
 
@@ -158,5 +158,5 @@ function validateForm() {
 
 /* **** MAIN **** */
 
-const datetime = document.forms['formReport']['dia-hora-avistamiento'];
+const datetime = document.forms['formReport']['dia-hora-avistamiento-0'];
 datetime.value = getDatetime();
