@@ -13,6 +13,7 @@ import filetype
 
 MEDIAPATH = 'media/'
 MEDIAERROR = False
+MEDIALENERROR = False
 
 reportDB = db.ReportDB()
 form = cgi.FieldStorage()
@@ -44,7 +45,7 @@ def save_media(field):
 
 def delete_media(reports):
     for report in reports:
-        for foto in fotos:
+        for foto in report['fotos']:
             os.remove(MEDIAPATH + foto)
 
 print("Content-type:text/html\r\n\r\n")
@@ -94,10 +95,6 @@ for index in range(0,cantidadAvistamientos()):
             except:
                 MEDIAERROR =  True
 
-    if MEDIAERROR:
-        delete_media(reports)
-        break
-
     reports.append({
         'dia_hora': fieldDiaHora.value,
         'tipo': fieldTipo.value,
@@ -105,8 +102,19 @@ for index in range(0,cantidadAvistamientos()):
         'fotos': fotos
     })
 
+    if len(fotos) == 0 or len(fotos) > 5:
+        MEDIALENERROR = True
+        delete_media(reports)
+        break
+
+    if MEDIAERROR:
+        delete_media(reports)
+        break
+
 if MEDIAERROR:
     print('<h3>Fotos no cumplen con el formato</h3>')
+elif MEDIALENERROR:
+    print('<h3>Deben ser entre 1 y 5 fotos</h3>')
 else:
     try:
         print('<h3>Se van a guardar las cosas</h3>')
