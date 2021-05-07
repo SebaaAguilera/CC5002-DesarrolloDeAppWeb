@@ -11,6 +11,9 @@
 *.sln.docstates
 checklist.md
 
+# Media
+media/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
