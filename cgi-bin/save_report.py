@@ -61,7 +61,7 @@ print("""
     </head>
     <body>
 """)
-print("<button onclick='window.history.back();'>Go Back</button>")
+#print("<button onclick='window.history.back();'>Go Back</button>")
 
 # Lugar
 fieldComuna = form['comuna']
@@ -131,39 +131,32 @@ elif MEDIALENERROR:
     </div>
     ''')
 else:
-    # try:
-    print('<h3>¡Hemos recibido su información, muchas gracias por colaborar!</h3>')
-    print(json.dumps({
-        'ruta_media': 'media/',
-        'comuna_id': html.escape(fieldComuna.value),
-        'sector': html.escape(fieldSector.value),
-        'nombre': html.escape(fieldNombre.value),
-        'email': html.escape(fieldEmail.value),
-        'celular': html.escape(fieldFono.value),
-        'reports': reports
-    }, indent= 2, sort_keys = True))
-    reportDB.save_data({
-        'ruta_media': 'media/',
-        'comuna_id': html.escape(fieldComuna.value),
-        'sector': html.escape(fieldSector.value),
-        'nombre': html.escape(fieldNombre.value),
-        'email': html.escape(fieldEmail.value),
-        'celular': html.escape(fieldFono.value),
-        'reports': reports
-    })
-    print(''''
-    <div class="form-button">
-        <div class="btn"><a href="../index.html"><b>Volver a la portada</b></a></div>
-    </div>
-    ''')
-    # except:
-    #     delete_media(reports)
-    #     print('<h3>Oh no!</h3>')
-    #     print(''''
-    #     <div class="form-button">
-    #         <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
-    #     </div>
-    #     ''')
+    try:
+        print('<h3>¡Hemos recibido su información, muchas gracias por colaborar!</h3>')
+        reportDB.save_data({
+            'ruta_media': 'media/',
+            'insertion': str(dt.datetime.now()),
+            'comuna_id': html.escape(fieldComuna.value),
+            'sector': html.escape(fieldSector.value),
+            'nombre': html.escape(fieldNombre.value),
+            'email': html.escape(fieldEmail.value),
+            'celular': html.escape(fieldFono.value),
+            'reports': reports
+        })
+        print('''
+        <div class="form-button">
+            <div class="btn"><a href="../index.html"><b>Volver a la portada</b></a></div>
+        </div>
+        ''')
+    except Exception as error:
+        delete_media(reports)
+        print('<h3>Oh no! Sus datos no han podido ser guardados</h3>')
+        print(''''
+        <div class="form-button">
+            <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
+        </div>
+        ''')
+        #print(error)
     
 
 

@@ -18,36 +18,26 @@ class ReportDB:
     def save_data(self, data):
         """D
         Data should be formatted like: {
-            ruta_media
-            comuna_id,
-            sector,
-            nombre,
-            email,
-            celular,
+            ruta_media, insertion
+            comuna_id, sector,
+            nombre, email, celular,
             reports: [
                 {
-                    dia_hora
-                    tipo,
-                    estado
-                    fotos: [
-                        filename1,
-                        ...
-                    ]
-                },
-                ...
+                    dia_hora, tipo, estado,
+                    fotos: [filename1, ...]
+                }, ...
             ]            
         }
         """
-
-        for report in data['reports']:
-            reportId = self.save_report((
+        reportId = self.save_report((
                 data['comuna_id'],
-                report['dia_hora'],
+                data['insertion'],
                 data['sector'],
                 data['nombre'],
                 data['email'],
                 data['celular']
             ))
+        for report in data['reports']:
             reportDetailId = self.save_report_detail((
                 report['dia_hora'],
                 report['tipo'],
