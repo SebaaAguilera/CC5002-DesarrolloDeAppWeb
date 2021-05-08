@@ -39,24 +39,24 @@ class ReportDB:
         }
         """
 
-        for report in data.reports:
+        for report in data['reports']:
             reportId = self.save_report((
-                data.comuna_id,
-                report.dia_hora,
-                data.sector,
-                data.nombre,
-                data.email,
-                data.celular
+                data['comuna_id'],
+                report['dia_hora'],
+                data['sector'],
+                data['nombre'],
+                data['email'],
+                data['celular']
             ))
             reportDetailId = self.save_report_detail((
-                report.dia_hora,
-                report.tipo,
-                report.estado,
+                report['dia_hora'],
+                report['tipo'],
+                report['estado'],
                 reportId
             ))
-            for foto in report.fotos:
+            for foto in report['fotos']:
                 self.save_photo((
-                    data.ruta_media,
+                    data['ruta_media'],
                     foto,
                     reportDetailId
                 ))
@@ -73,7 +73,7 @@ class ReportDB:
     def save_report_detail(self, data):
         sql = '''
             INSERT INTO detalle_avistamiento (dia_hora, tipo, estado, avistamiento_id) 
-            VALUES (%s, %s, %s, %s, %s);
+            VALUES (%s, %s, %s, %s);
         '''
         self.cursor.execute(sql, data)
         self.db.commit()

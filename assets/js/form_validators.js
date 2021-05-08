@@ -144,7 +144,7 @@ function validateForm() {
     } else if (!validateStatus('estado-avistamiento')) {
         msg ='Rellena estado';
     } else if (!validateFiles()) {
-        // msg = 'Debes subir entre 1 y 5 ¡imágenes! por avistamiento';
+        msg = 'Debes subir entre 1 y 5 ¡imágenes! por avistamiento';
     }
 
     if (msg != ''){

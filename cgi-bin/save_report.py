@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-import mysql.connector
 import cgi
 import cgitb;
 cgitb.enable()
-import db
 import json
+import html
 import os
 import datetime as dt
 import hashlib as hl
 import filetype
+
+import db
 
 MEDIAPATH = 'media/'
 MEDIAERROR = False
@@ -48,12 +49,15 @@ def delete_media(reports):
         for foto in report['fotos']:
             os.remove(MEDIAPATH + foto)
 
-print("Content-type:text/html\r\n\r\n")
+print("Content-type:text/html; charset=utf-8 \r\n\r\n")
 print("""
 <!DOCTYPE html>
     <html>
     <head>
-    <title>Save doctor</title>
+    <title>Guardado de avistamiento</title>
+    <link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
     </head>
     <body>
 """)
@@ -78,7 +82,6 @@ for index in range(0,cantidadAvistamientos()):
     fieldFoto = form [f'foto-avistamiento-{index}']
 
     fotos = []
-    # Que horrendoo esto
     if isinstance(fieldFoto, list):
         for foto in fieldFoto:
             if foto.filename:
@@ -102,46 +105,70 @@ for index in range(0,cantidadAvistamientos()):
         'fotos': fotos
     })
 
-    if len(fotos) == 0 or len(fotos) > 5:
+    if MEDIAERROR:
+        delete_media(reports)
+        break
+    elif len(fotos) == 0 or len(fotos) > 5:
         MEDIALENERROR = True
         delete_media(reports)
         break
 
-    if MEDIAERROR:
-        delete_media(reports)
-        break
+### BODY
+print('<div class="card" style="margin-top: 50px">')
 
 if MEDIAERROR:
     print('<h3>Fotos no cumplen con el formato</h3>')
+    print(''''
+    <div class="form-button">
+        <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
+    </div>
+    ''')
 elif MEDIALENERROR:
     print('<h3>Deben ser entre 1 y 5 fotos</h3>')
+    print(''''
+    <div class="form-button">
+        <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
+    </div>
+    ''')
 else:
-    try:
-        print('<h3>Se van a guardar las cosas</h3>')
-        print({
-            'ruta_media': 'media/',
-            'comuna_id': fieldComuna.value,
-            'sector': fieldSector.value,
-            'nombre': fieldNombre.value,
-            'email': fieldEmail.value,
-            'celular': fieldFono.value,
-            'reports': reports
-        })
-        # reportDB.save_data({
-        #     'ruta_media': 'media/',
-        #     'comuna_id': fieldComuna.value,
-        #     'sector': fieldSector.value,
-        #     'nombre': fieldNombre.value,
-        #     'email': fieldEmail.value,
-        #     'celular': fieldFono.value,
-        #     'reports': reports
-        # })
-    except:
-        delete_media(reports)
-        print('<h3>Oh no!</h3>')
+    # try:
+    print('<h3>¡Hemos recibido su información, muchas gracias por colaborar!</h3>')
+    print(json.dumps({
+        'ruta_media': 'media/',
+        'comuna_id': html.escape(fieldComuna.value),
+        'sector': html.escape(fieldSector.value),
+        'nombre': html.escape(fieldNombre.value),
+        'email': html.escape(fieldEmail.value),
+        'celular': html.escape(fieldFono.value),
+        'reports': reports
+    }, indent= 2, sort_keys = True))
+    reportDB.save_data({
+        'ruta_media': 'media/',
+        'comuna_id': html.escape(fieldComuna.value),
+        'sector': html.escape(fieldSector.value),
+        'nombre': html.escape(fieldNombre.value),
+        'email': html.escape(fieldEmail.value),
+        'celular': html.escape(fieldFono.value),
+        'reports': reports
+    })
+    print(''''
+    <div class="form-button">
+        <div class="btn"><a href="../index.html"><b>Volver a la portada</b></a></div>
+    </div>
+    ''')
+    # except:
+    #     delete_media(reports)
+    #     print('<h3>Oh no!</h3>')
+    #     print(''''
+    #     <div class="form-button">
+    #         <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
+    #     </div>
+    #     ''')
+    
 
 
 print("""
+</div>
 </body>
 </html>
 """)
