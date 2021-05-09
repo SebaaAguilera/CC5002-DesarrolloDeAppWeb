@@ -7,9 +7,9 @@ class ReportDB:
     def __init__(self):
         self.db = mysql.connector.connect(
             host = 'localhost',
-            user = 'cc5002',
-            password = 'programacionweb',
-            database= 'tarea2'
+            user = 'cc500270_u',
+            password = 'ibuspellen',
+            database= 'cc500270_db'
         )
         self.cursor = self.db.cursor()
 

@@ -11,13 +11,15 @@ Repositorio del curso CC5002: Desarrollo de Aplicaciones Web
 python3 -m htt.server --bind localhost --cgi <port> 
 ```
 
-### Base de datos local
+### Conexión BDD
 Motor: MySQL
-Database: tarea2
-User: cc5002
-password: programacionweb
+Database: cc500270_db
+User: cc500270_u
+password: ibuspellen
+
 Migración inicial:  
 
 ```
-python3 migrations/0000_auto.py
+mysql -u cc500270_u -p cc500270_db < sql/tarea2.sql
+mysql -u cc500270_u -p cc500270_db < sql/region-comuna.sql
 ```
