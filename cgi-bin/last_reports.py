@@ -15,7 +15,7 @@ response = {
         'comuna': element[1], 
         'sector': element[2],
         'tipo': element[3],
-        'foto': element[4][0] + element[4][1] 
+        'foto': element[4] + element[5] 
         } for element in reportDB.get_last_reports()]
 }
 print(json.JSONEncoder().encode(response))
