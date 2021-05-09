@@ -120,11 +120,7 @@ class ReportDB:
     
     def get_report_detail(self, report_id):
         self.cursor.execute('SELECT id, dia_hora, tipo, estado, avistamiento_id FROM detalle_avistamiento WHERE avistamiento_id=%s', (report_id, ))
-        return self.cursor.fetchall()
-
-    def get_first_photo(self,report_detail_id):
-        self.cursor.execute('SELECT ruta_archivo, nombre_archivo FROM foto WHERE detalle_avistamiento_id=%s LIMIT 1', (report_detail_id, ))
-        return self.cursor.fetchone()        
+        return self.cursor.fetchall()     
 
     def get_photos(self,report_detail_id):
         self.cursor.execute('SELECT id, ruta_archivo, nombre_archivo, detalle_avistamiento_id FROM foto WHERE detalle_avistamiento_id=%s', (report_detail_id, ))

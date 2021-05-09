@@ -52,14 +52,15 @@ def delete_media(reports):
 print("Content-type:text/html; charset=utf-8 \r\n\r\n")
 print("""
 <!DOCTYPE html>
-    <html>
-    <head>
-    <title>Guardado de avistamiento</title>
-    <link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/form.css">
-    </head>
-    <body>
+<html>
+<head>
+<title>Guardado de avistamiento</title>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/form.css">
+</head>
+<body>
 """)
 #print("<button onclick='window.history.back();'>Go Back</button>")
 

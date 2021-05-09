@@ -117,24 +117,36 @@ nav li a.redirect:hover {
 .col-25 {
     float: left;
     width: 25%;
-  }
+}
+
+.col-50 {
+    float: left;
+    align-items: center;
+    width: 50%;
+}
   
-  .col-75 {
+.col-75 {
     float: left;
     align-items: center;
     width: 75%;
-  }
-  
-  .row:after {
+}
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
 
 @media screen and (max-width: 767px) {
     .row {
         display: block;
     }
+
+    .col-50 {
+        margin: 10px 0px;
+        width: 100%;
+    }
+
     .col-25, .col-75 {
         margin: 10px 0px;
         width: 100%;

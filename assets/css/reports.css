@@ -39,6 +39,10 @@
     padding: 15px;
 }
 
+.response-table .table-row:hover {
+    cursor: pointer;
+}
+
 .reports-table .table-row:nth-child(odd) {
     background-color: #f5f5f5;
 }
@@ -58,13 +62,13 @@
     border-bottom-right-radius: 10px;
   }
 
-.reports-table .table-row:last-child td:first-child{
+/* .reports-table .table-row:last-child td:first-child{
     border-bottom-left-radius: 10px;
 }
 
 .reports-table .table-row:last-child td:last-child{
     border-bottom-right-radius: 10px;
-}
+} */
 
 @media screen and (max-width: 767px) {
     .reports-table {
