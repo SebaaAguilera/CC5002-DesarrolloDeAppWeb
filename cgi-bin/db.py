@@ -79,24 +79,41 @@ class ReportDB:
 
     # Get fron database
     def get_reports(self):
-        self.cursor.execute('SELECT id, comuna_id, dia_hora, sector, nombre, email, celular FROM avistamiento')
+        sql = '''
+            SELECT AV.id, AV.dia_hora, CO.nombre, AV.sector, AV.nombre, J.count_DA, J.count_F 
+            FROM avistamiento AV, comuna CO,
+                (
+                    SELECT AV.id AS id, COUNT(DA.id) AS count_DA, COUNT(F.id) AS count_F
+                    FROM avistamiento AV, detalle_avistamiento DA, foto F
+                    WHERE AV.id = DA.avistamiento_id AND DA.id = F.detalle_avistamiento_id
+                    GROUP BY (AV.id)
+                ) J
+            WHERE AV.id = J.id AND AV.comuna_id = CO.id;
+        '''
+        self.cursor.execute(sql)
         return self.cursor.fetchall()
 
     def get_last_reports(self):
-        self.cursor.execute('SELECT DA.dia_hora, CO.nombre, AV.sector, DA.tipo, DA.id FROM avistamiento AV, detalle_avistamiento DA, comuna CO WHERE DA.avistamiento_id = AV.id AND AV.comuna_id=CO.id ORDER BY DA.dia_hora DESC LIMIT 5')
+        sql = '''
+            SELECT DA.dia_hora, CO.nombre, AV.sector, DA.tipo, DA.id 
+            FROM avistamiento AV, detalle_avistamiento DA, comuna CO 
+            WHERE DA.avistamiento_id = AV.id AND AV.comuna_id=CO.id 
+            ORDER BY DA.dia_hora DESC LIMIT 5;
+        '''
+        self.cursor.execute(sql)
         reports = self.cursor.fetchall()
         return [ [element[0], element[1], element[2], element[3], self.get_first_photo(element[4])] for element in reports]
 
     def get_report_detail(self, report_id):
-        self.cursor.execute('SELECT id, dia_hora, tipo, estado, avistamiento_id FROM detalle_avistamiento WHERE avistamiento_id=%s', report_id)
+        self.cursor.execute('SELECT id, dia_hora, tipo, estado, avistamiento_id FROM detalle_avistamiento WHERE avistamiento_id=%s', (report_id, ))
         return self.cursor.fetchall()
 
     def get_first_photo(self,report_detail_id):
-        self.cursor.execute(f'SELECT ruta_archivo, nombre_archivo FROM foto WHERE detalle_avistamiento_id={report_detail_id} LIMIT 1')
+        self.cursor.execute('SELECT ruta_archivo, nombre_archivo FROM foto WHERE detalle_avistamiento_id=%s LIMIT 1', (report_detail_id, ))
         return self.cursor.fetchone()        
 
     def get_photos(self,report_detail_id):
-        self.cursor.execute('SELECT id, ruta_archivo, nombre_archivo, detalle_avistamiento_id FROM foto WHERE detalle_avistamiento_id=%s', report_detail_id)
+        self.cursor.execute('SELECT id, ruta_archivo, nombre_archivo, detalle_avistamiento_id FROM foto WHERE detalle_avistamiento_id=%s', (report_detail_id, ))
         return self.cursor.fetchall()
 
     def get_regiones(self):
@@ -104,6 +121,6 @@ class ReportDB:
         return self.cursor.fetchall()
 
     def get_comunas(self, regions_id):
-        self.cursor.execute(f'SELECT id, nombre FROM comuna WHERE region_id={regions_id} ORDER BY nombre ASC;')
+        self.cursor.execute('SELECT id, nombre FROM comuna WHERE region_id=%s ORDER BY nombre ASC;', (regions_id, ))
         return self.cursor.fetchall()
 

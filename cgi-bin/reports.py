@@ -8,8 +8,16 @@ import json
 import os
 
 reportDB = db.ReportDB()
-# print("Content-type:application/json\r\n\r\n")
+print("Content-type:application/json\r\n\r\n")
 response = {
-    'Result': reportDB.get_reports()
+    'Result': [{
+        'avistamiento_id': element[0],
+        'fecha': str(element[1]),
+        'comuna': element[2],
+        'sector': element[3],
+        'contacto': element[4],
+        'total_avistamientos': element[5],
+        'total_fotos': element[6]
+    } for element in reportDB.get_reports()]
 }
 print(json.JSONEncoder().encode(response))
