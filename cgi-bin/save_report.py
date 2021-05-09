@@ -158,8 +158,6 @@ else:
         ''')
         #print(error)
     
-
-
 print("""
 </div>
 </body>

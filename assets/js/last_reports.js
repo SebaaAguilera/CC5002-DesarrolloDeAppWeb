@@ -12,7 +12,7 @@ const parseHTML = (data) => {
                     <p><b>Tipo:</b> ${element.tipo}</p>
                 </div>
                 <div class="image">
-                    <img src="${element.img.src}" alt="${element.img.alt}">
+                    <img src="${element.foto}" alt="report-img">
                 </div>
             </div>`);
     });
@@ -21,70 +21,14 @@ const parseHTML = (data) => {
 
 /* **** MAIN **** */
 
-fetch('./assets/json/dummy.json').then(response => {
-    console.debug('DUMMY RESPONSE', response);
+fetch('./cgi-bin/last_reports.py').then(response => {
+    console.debug('CGI RESPONSE', response);
     return response.json();
 }).then(data => {
-    const dummy = data.avistamientos.slice(0,5);
-    console.debug('DUMMY', dummy);
-
+    const result = data.Result;
+    console.debug('LAST 5 ',data);
     let lastReports = document.getElementById('lastReports');
-    lastReports.innerHTML = parseHTML(dummy);
+    lastReports.innerHTML = parseHTML(result);
 }).catch(e => {
     console.error(e)
-    const dummy = [
-        {
-            "fecha": "2021-04-28 10:03",
-            "comuna": "Renca",
-            "sector": "Cerro",
-            "tipo": "insecto",
-            "img": {
-                "src":"https://bugwoodcloud.org/images/384x256/9009060.jpg",
-                "alt":"larva"
-            }
-         },
-        {
-           "fecha": "2021-03-29 13:21",
-           "comuna": "La Florida",
-           "sector": "Vicuña Mackena",
-           "tipo": "insecto",
-           "img": {
-               "src":"https://bugwoodcloud.org/images/384x256/5386131.jpg",
-               "alt":"chinita"
-           }
-        },
-        {
-            "fecha": "2021-03-27 10:30",
-            "comuna": "Providencia",
-            "sector": "Plaza Italia",
-            "tipo": "arácnido",
-            "img": {
-                "src":"https://bugwoodcloud.org/images/384x256/5506414.jpg",
-                "alt":"tarantula"
-            }
-         },
-         {
-            "fecha": "2021-03-25 12:50",
-            "comuna": "Providencia",
-            "sector": "Parque de la aviación",
-            "tipo": "insecto",
-            "img": {
-                "src":"https://bugwoodcloud.org/images/384x256/5604040.jpg",
-                "alt":"mantis"
-            }
-         },
-         {
-            "fecha": "2021-03-25 12:50",
-            "comuna": "Providencia",
-            "sector": "Parque de las esculturas",
-            "tipo": "miriápodo",
-            "img": {
-                "src":"https://bugwoodcloud.org/images/384x256/5473412.jpg",
-                "alt":"cienpiés"
-            }
-         }
-    ];
-
-    let lastReports = document.getElementById('lastReports');
-    lastReports.innerHTML = parseHTML(dummy);
 });
