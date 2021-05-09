@@ -8,14 +8,14 @@ Repositorio del curso CC5002: Desarrollo de Aplicaciones Web
 
 ### Despliegue local
 ```
-python3 -m htt.server --bind localhost --cgi <port> 
+python3 -m http.server --bind localhost --cgi <port> 
 ```
 
 ### Conexión BDD
-Motor: MySQL
-Database: cc500270_db
-User: cc500270_u
-password: ibuspellen
+Motor: MySQL    
+Database: cc500270_db    
+User: cc500270_u    
+Password: ibuspellen    
 
 Migración inicial:  
 

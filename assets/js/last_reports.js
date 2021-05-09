@@ -28,7 +28,9 @@ fetch('./cgi-bin/last_reports.py').then(response => {
     const result = data.Result;
     console.debug('LAST 5 ',data);
     let lastReports = document.getElementById('lastReports');
-    lastReports.innerHTML = parseHTML(result);
+    lastReports.innerHTML = !result.length ? '<p>No hay datos recientes</p>' : parseHTML(result);
 }).catch(e => {
-    console.error(e)
+    console.error(e);
+    let lastReports = document.getElementById('lastReports');
+    lastReports.innerHTML = '<p>Hubo un error al obtener la data</p>'
 });

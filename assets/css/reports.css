@@ -89,3 +89,14 @@
         font-size: 15px !important;
     }
 }
+
+#paginator {
+    text-align: center !important;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#paginator a {
+    cursor: pointer;
+    color: rgba(44,82,47,1);
+}
