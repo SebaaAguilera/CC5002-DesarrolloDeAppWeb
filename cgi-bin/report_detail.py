@@ -8,8 +8,10 @@ import json
 import os
 
 reportDB = db.ReportDB()
-REQUEST = os.environ['QUERY_STRING'].split('&')[0]
+REQUEST = os.environ['QUERY_STRING'].split('=')[1]
 
+report = reportDB.get_report(REQUEST)
+report_detail = reportDB.get_report_detail(REQUEST)
 
 print("Content-type:text/html; charset=utf-8 \r\n\r\n")
 print(f"""
@@ -35,6 +37,17 @@ print(f"""
         {
             REQUEST
         }
+        <div>
+        {
+            reportDB.get_report(REQUEST)
+        }
+        </div>
+        <div>
+        {
+            reportDB.get_report_detail(REQUEST)
+        }
+        </div>
+
         <div class="report">
             <div class="row">
                 <div class="col-25 report-data">

@@ -94,6 +94,7 @@ class ReportDB:
         return self.cursor.fetchall()
 
     def get_last_reports(self):
+        ''' FIX ME se debería hacer la operación del return dentro del sql'''
         sql = '''
             SELECT DA.dia_hora, CO.nombre, AV.sector, DA.tipo, DA.id 
             FROM avistamiento AV, detalle_avistamiento DA, comuna CO 
@@ -104,6 +105,15 @@ class ReportDB:
         reports = self.cursor.fetchall()
         return [ [element[0], element[1], element[2], element[3], self.get_first_photo(element[4])] for element in reports]
 
+    def get_report(self, report_id):
+        sql = ''' 
+            SELECT RE.nombre, CO.nombre, AV.sector, AV.nombre, AV.email, AV.celular
+            FROM region RE, comuna CO, avistamiento AV
+            WHERE CO.region_id = RE.id AND AV.comuna_id = CO.id AND AV.id = %s;
+        '''
+        self.cursor.execute(sql, (report_id, ))
+        return self.cursor.fetchone()
+    
     def get_report_detail(self, report_id):
         self.cursor.execute('SELECT id, dia_hora, tipo, estado, avistamiento_id FROM detalle_avistamiento WHERE avistamiento_id=%s', (report_id, ))
         return self.cursor.fetchall()
