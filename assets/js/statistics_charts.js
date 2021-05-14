@@ -6,12 +6,12 @@ const canvas = document.getElementById("chart-cant-avistamientos");
 let chart = new Chart(canvas, {
     type: "line",
     data: {
-    labels: [...Array(25).keys()].map(i => i + 0), // range(0,25)
+    labels: [...Array(30).keys()].map(i => i + 1).map(x => x + '/03/2021'), // range(0,25)
     datasets: [{
-        label: 'Cantidad de avistamientos por hora',
+        label: 'Cantidad de avistamientos por día',
         borderColor: '#509455',
         fill: false,
-        data: [1, 2, 3, 2, 5, 3, 2, 3, 2, 6, 4, 5, 3, 4, 5, 7, 5, 3, 5, 5, 6, 7, 3, 6, 3]
+        data: [1, 2, 3, 2, 5, 3, 2, 3, 2, 6, 4, 5, 3, 4, 5, 7, 5, 3, 5, 5, 6, 7, 3, 6, 5, 6, 4, 5, 3, 7]
     }]
     },
     options: {
