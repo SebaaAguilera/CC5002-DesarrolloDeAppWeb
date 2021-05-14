@@ -12,6 +12,8 @@ import filetype
 
 import db
 
+# Local media/
+# Anakena ../media/
 MEDIAPATH = 'media/'
 MEDIAERROR = False
 MEDIALENERROR = False
@@ -119,14 +121,14 @@ print('<div class="card" style="margin-top: 50px">')
 
 if MEDIAERROR:
     print('<h3>Fotos no cumplen con el formato</h3>')
-    print(''''
+    print('''
     <div class="form-button">
         <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
     </div>
     ''')
 elif MEDIALENERROR:
     print('<h3>Deben ser entre 1 y 5 fotos</h3>')
-    print(''''
+    print('''
     <div class="form-button">
         <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
     </div>
@@ -152,7 +154,7 @@ else:
     except Exception as error:
         delete_media(reports)
         print('<h3>Oh no! Sus datos no han podido ser guardados</h3>')
-        print(''''
+        print('''
         <div class="form-button">
             <button class="btn" onclick="window.history.back();"><b>Volver al formulario</b></button>
         </div>
