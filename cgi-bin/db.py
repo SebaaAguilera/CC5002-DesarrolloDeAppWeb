@@ -134,3 +134,53 @@ class ReportDB:
         self.cursor.execute('SELECT id, nombre FROM comuna WHERE region_id=%s ORDER BY nombre ASC;', (regions_id, ))
         return self.cursor.fetchall()
 
+    def get_reports_per_day(self):
+        sql = '''
+            SELECT CAST(dia_hora AS DATE) AS dia , COUNT(dia_hora) 
+            FROM detalle_avistamiento 
+            GROUP BY dia
+            ORDER BY dia ASC
+            '''
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
+    def get_reports_by_type(self):
+        sql = '''
+            SELECT tipo , COUNT(tipo) 
+            FROM detalle_avistamiento 
+            GROUP BY tipo
+            '''
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
+    def get_reports_by_status(self):
+        sql = '''
+            SELECT D.mes, COALESCE(V.cant, 0), COALESCE(M.cant, 0), COALESCE(N.cant, 0)
+            FROM (
+                SELECT DISTINCT EXTRACT(YEAR_MONTH FROM dia_hora) AS mes 
+                FROM detalle_avistamiento
+            ) D LEFT OUTER JOIN (
+                SELECT EXTRACT(YEAR_MONTH FROM dia_hora) AS mes, estado , COUNT(estado) AS cant
+                FROM detalle_avistamiento 
+                WHERE estado = 'vivo'
+                GROUP BY mes, estado
+            ) V
+            ON D.mes = V.mes
+            LEFT OUTER JOIN (
+                SELECT EXTRACT(YEAR_MONTH FROM dia_hora) AS mes, estado , COUNT(estado) AS cant
+                FROM detalle_avistamiento 
+                WHERE estado = 'muerto'
+                GROUP BY mes, estado
+            ) M
+            ON D.mes = M.mes
+            LEFT OUTER JOIN (
+                SELECT EXTRACT(YEAR_MONTH FROM dia_hora) AS mes, estado , COUNT(estado) AS cant
+                FROM detalle_avistamiento 
+                WHERE estado = 'no sé'
+                GROUP BY mes, estado
+            ) N
+            ON D.mes = N.mes
+            ORDER BY D.mes ASC
+        '''
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
