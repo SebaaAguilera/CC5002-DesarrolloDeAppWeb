@@ -11,7 +11,7 @@ reportDB = db.ReportDB()
 
 # Reports per day
 reportsPerDay = reportDB.get_reports_per_day()
-reportsPerDayAxis = {
+reportsPerDayAxis = { 
     'label': [],
     'data': []
 }
@@ -31,7 +31,6 @@ for element in reportsByType:
 
 # Reports by status
 reportsByStatus = reportDB.get_reports_by_status()
-
 reportsByStatusAxis = {
     'label': [],
     'data_vivo': [],

@@ -8,6 +8,12 @@
     <link rel="icon" type="image/svg" href="./assets/svg/buddy-30624.svg" sizes="any">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 </head>
 <body>
     <nav>
@@ -29,10 +35,13 @@
         </p>
     </div>
     <div class="card">
-        <!-- Images taken from https://www.insectimages.org/index.cfm -->
         <h3>Últimos avistamientos</h3>
         <div id="lastReports"></div>
     </div>
+    <div class="card">
+        <div id="mapid"></div>
+    </div>
     <script src="./assets/js/last_reports.js"></script>
+    <script src="./assets/js/map.js"></script>
 </body>
 </html>

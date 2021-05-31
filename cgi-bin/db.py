@@ -134,6 +134,16 @@ class ReportDB:
         self.cursor.execute('SELECT id, nombre FROM comuna WHERE region_id=%s ORDER BY nombre ASC;', (regions_id, ))
         return self.cursor.fetchall()
 
+    def get_photos_per_comuna(self):
+        sql = '''
+            SELECT C.nombre, COUNT(F.id)
+            FROM comuna C, avistamiento A, detalle_avistamiento D, foto F
+            WHERE C.id = A.comuna_id AND A.id = D.avistamiento_id AND D.id = F.detalle_avistamiento_id
+            GROUP BY C.nombre
+        '''
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
     def get_reports_per_day(self):
         sql = '''
             SELECT CAST(dia_hora AS DATE) AS dia , COUNT(dia_hora) 

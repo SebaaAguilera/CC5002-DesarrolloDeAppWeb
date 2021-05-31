@@ -1,6 +1,4 @@
 import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'
-    
-/* **** MAIN **** */
 
 function reportsPerDay(info) {
     const canvas = document.getElementById("chart-cant-avistamientos");
@@ -80,10 +78,11 @@ function getStatistics() {
         reportsByStatus(info.reportsByStatus)
     };
     xhr.onerror = function () {
-        mostrarError('No se pudo obtener la data');
+        console.error('No se pudo obtener la data');
     }
 
     xhr.send();
 }
 
+/* **** MAIN **** */
 getStatistics()
