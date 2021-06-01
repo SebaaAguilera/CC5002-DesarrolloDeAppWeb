@@ -136,12 +136,21 @@ class ReportDB:
 
     def get_photos_per_comuna(self):
         sql = '''
-            SELECT C.nombre, COUNT(F.id)
+            SELECT C.nombre, C.id, COUNT(F.id)
             FROM comuna C, avistamiento A, detalle_avistamiento D, foto F
             WHERE C.id = A.comuna_id AND A.id = D.avistamiento_id AND D.id = F.detalle_avistamiento_id
-            GROUP BY C.nombre
+            GROUP BY C.nombre, C.id
         '''
         self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
+    def get_report_detail_by_comuna(self, comuna_id):
+        sql = '''
+            SELECT D.id, D.dia_hora, D.tipo, D.estado, A.id
+            FROM avistamiento A, detalle_avistamiento D
+            WHERE A.id = D.avistamiento_id AND A.comuna_id = %s
+        '''
+        self.cursor.execute(sql, (comuna_id, ))
         return self.cursor.fetchall()
 
     def get_reports_per_day(self):

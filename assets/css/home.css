@@ -51,4 +51,22 @@
     }   
 }
 
-#mapid { height: 512px; }
+#mapid { height: 90vh; }
+
+.map-img-list {
+    text-align: center;
+}
+
+.map-img {
+    width: 106px;
+    height: 80px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-div-img .map-img {
+    width: 106px;
+    height: 80px;
+    object-fit: cover;
+}
