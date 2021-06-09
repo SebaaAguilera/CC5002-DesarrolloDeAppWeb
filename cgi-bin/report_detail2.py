@@ -3,11 +3,11 @@
 import cgi
 import cgitb;
 cgitb.enable()
-import db
+import db2
 import json
 import os
 
-reportDB = db.ReportDB()
+reportDB = db2.ReportDB()
 REQUEST = os.environ['QUERY_STRING'].split('=')[1]
 
 report = reportDB.get_report(REQUEST)
@@ -20,17 +20,17 @@ print(f"""
 <head>
 <title>Detalles del avistamiento</title>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
-<link rel="stylesheet" href="../assets/css/styles.css">
-<link rel="stylesheet" href="../assets/css/reportPage.css">
+<link rel="icon" type="image/svg" href="../assets2/svg/buddy-30624.svg" sizes="any">
+<link rel="stylesheet" href="../assets2/css/styles.css">
+<link rel="stylesheet" href="../assets2/css/reportPage.css">
 </head>
 <body>
 <nav>
     <ul>
-        <li><a href="../index.html" class="home">AVISTAMIENTOS</a></li>
-        <li><a href="../pages/form.html" class="redirect"> Informar avistamiento </a></li>
-        <li><a href="../pages/reports.html" class="redirect"> Ver listado de avistamientos</a></li>
-        <li><a href="../pages/statistics.html" class="redirect"> Estadísticas </a></li>
+        <li><a href="../index2.html" class="home">AVISTAMIENTOS</a></li>
+        <li><a href="../pages2/form.html" class="redirect"> Informar avistamiento </a></li>
+        <li><a href="../pages2/reports.html" class="redirect"> Ver listado de avistamientos</a></li>
+        <li><a href="../pages2/statistics.html" class="redirect"> Estadísticas </a></li>
     </ul>
 </nav>
 <div class="card">
@@ -85,11 +85,11 @@ else:
 
 print("""
     <div class="div-buttons">
-        <div class="btn"><a href="../pages/reports.html"><b>Volver al listado</b></a></div>
-        <div class="btn btn-white"><a href="../index.html"><b>Volver a la portada</b></a></div>
+        <div class="btn"><a href="../pages2/reports.html"><b>Volver al listado</b></a></div>
+        <div class="btn btn-white"><a href="../index2.html"><b>Volver a la portada</b></a></div>
     </div>
 </div>
-<script src="../assets/js/modal_img.js"></script>
+<script src="../assets2/js/modal_img.js"></script>
 </body>
 </html>
 """)

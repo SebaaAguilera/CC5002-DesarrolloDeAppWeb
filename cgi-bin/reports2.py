@@ -3,11 +3,11 @@
 import cgi
 import cgitb;
 cgitb.enable()
-import db
+import db2
 import json
 import os
 
-reportDB = db.ReportDB()
+reportDB = db2.ReportDB()
 print("Content-type:application/json\r\n\r\n")
 response = {
     'Result': [{

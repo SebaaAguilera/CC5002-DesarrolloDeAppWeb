@@ -2,7 +2,7 @@
 
 let mymap = L.map('mapid').setView([-33.448890, -70.669265], 13);
 
-fetch('./cgi-bin/map_data.py').then( response => {
+fetch('./cgi-bin/map_data2.py').then( response => {
     console.debug('CGI RESPONSE', response)
     return response.json()
 }).then( data => {

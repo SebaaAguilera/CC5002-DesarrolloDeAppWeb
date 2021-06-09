@@ -21,7 +21,7 @@ const parseHTML = (data) => {
 
 /* **** MAIN **** */
 
-fetch('./cgi-bin/last_reports.py').then(response => {
+fetch('./cgi-bin/last_reports2.py').then(response => {
     console.debug('CGI RESPONSE', response);
     return response.json();
 }).then(data => {

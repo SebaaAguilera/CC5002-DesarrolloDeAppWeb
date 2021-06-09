@@ -69,7 +69,7 @@ function reportsByStatus(info) {
 
 function getStatistics() {
     let xhr = new XMLHttpRequest()
-    xhr.open('GET','../cgi-bin/statistics.py', true)
+    xhr.open('GET','../cgi-bin/statistics2.py', true)
     xhr.timeout = 3000
     xhr.onload = function (data) {
         const info = JSON.parse(data.currentTarget.responseText)

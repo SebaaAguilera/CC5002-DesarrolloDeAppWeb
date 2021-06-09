@@ -4,7 +4,7 @@ function parseHTML(tableBody, data) {
         const tr = document.createElement('tr');
         tr.className = 'table-row';
         tr.onclick = () => {
-            location.href = `../cgi-bin/report_detail.py?idAvistamiento=${element.avistamiento_id}`;
+            location.href = `../cgi-bin/report_detail2.py?idAvistamiento=${element.avistamiento_id}`;
         }
         tr.innerHTML = `<td>${element.fecha}</td>
                         <td>${element.comuna}</td>
@@ -48,7 +48,7 @@ function moveToPage(pageNumber) {
 
 let reports;
 
-fetch('../cgi-bin/reports.py').then(response => {
+fetch('../cgi-bin/reports2.py').then(response => {
     console.debug('CGI RESPONSE', response);
     return response.json();
 }).then(data => {

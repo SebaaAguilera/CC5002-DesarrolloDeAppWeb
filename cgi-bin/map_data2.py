@@ -3,17 +3,17 @@
 import cgi
 import cgitb;
 cgitb.enable()
-import db
+import db2
 import json
 
-coordinates = json.load(open('./assets/json/coordinates.json'))
+coordinates = json.load(open('./assets2/json/coordinates.json'))
 
 def searchCoordinates(comuna):
     for element in coordinates:
         if element['name'] == comuna:
             return element
 
-reportDB = db.ReportDB()
+reportDB = db2.ReportDB()
 print("Content-type:application/json\r\n\r\n")
 response = {
     'Result': [{

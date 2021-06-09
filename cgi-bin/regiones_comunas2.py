@@ -3,11 +3,11 @@
 import cgi
 import cgitb;
 cgitb.enable()
-import db
+import db2
 import json
 import os
 
-reportDB = db.ReportDB()
+reportDB = db2.ReportDB()
 regions = []
 for region in reportDB.get_regiones():
     communes = reportDB.get_comunas(region[0])

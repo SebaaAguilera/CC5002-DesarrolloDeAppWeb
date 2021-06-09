@@ -3,11 +3,11 @@
 import cgi
 import cgitb;
 cgitb.enable()
-import db
+import db2
 import json
 import os
 
-reportDB = db.ReportDB()
+reportDB = db2.ReportDB()
 
 # Reports per day
 reportsPerDay = reportDB.get_reports_per_day()

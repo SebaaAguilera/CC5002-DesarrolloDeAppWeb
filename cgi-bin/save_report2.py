@@ -10,7 +10,7 @@ import datetime as dt
 import hashlib as hl
 import filetype
 
-import db
+import db2
 
 # Local media/
 # Anakena ../media/
@@ -18,7 +18,7 @@ MEDIAPATH = 'media/'
 MEDIAERROR = False
 MEDIALENERROR = False
 
-reportDB = db.ReportDB()
+reportDB = db2.ReportDB()
 form = cgi.FieldStorage()
 
 def cantidadAvistamientos():
@@ -58,9 +58,9 @@ print("""
 <head>
 <title>Guardado de avistamiento</title>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg" href="../assets/svg/buddy-30624.svg" sizes="any">
-<link rel="stylesheet" href="../assets/css/styles.css">
-<link rel="stylesheet" href="../assets/css/form.css">
+<link rel="icon" type="image/svg" href="../assets2/svg/buddy-30624.svg" sizes="any">
+<link rel="stylesheet" href="../assets2/css/styles.css">
+<link rel="stylesheet" href="../assets2/css/form.css">
 </head>
 <body>
 """)
@@ -148,7 +148,7 @@ else:
         })
         print('''
         <div class="form-button">
-            <div class="btn"><a href="../index.html"><b>Volver a la portada</b></a></div>
+            <div class="btn"><a href="../index2.html"><b>Volver a la portada</b></a></div>
         </div>
         ''')
     except Exception as error:
