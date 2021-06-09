@@ -6,6 +6,8 @@ cgitb.enable()
 import db
 import json
 
+# Local ./assets/
+# Anakena ../assets/
 coordinates = json.load(open('./assets/json/coordinates.json'))
 
 def searchCoordinates(comuna):
